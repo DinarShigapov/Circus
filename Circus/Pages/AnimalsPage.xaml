@@ -1,0 +1,33 @@
+﻿<Page x:Class="Circus.Pages.AnimalsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Circus.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AnimalsPage">
+
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <TextBlock Text="Поиск"/>
+                <TextBox x:Name="TBSearch" Width="200"/>
+                <Button x:Name="BAdd" Content="Добавить" Click="BAdd_Click"/>
+                <Button x:Name="BEdit" Content="Изменить" Click="BEdit_Click"/>
+                <Button x:Name="BRemove" Content="Удалить" Click="BRemove_Click"/>
+            </StackPanel>
+            <ListView x:Name="LVAnimals">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Age}"/>
+                            <TextBlock Text="{Binding AnimalType.Name}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </DockPanel>
+    </Grid>
+</Page>
