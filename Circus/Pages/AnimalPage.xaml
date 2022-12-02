@@ -9,7 +9,7 @@
       Title="AnimalPage">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" Width="300" Orientation="Vertical">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Orientation="Vertical">
             <TextBlock Text="Кличка"/>
             <TextBox Text="{Binding Name}"/>
             <TextBlock Text="Возраст"/>

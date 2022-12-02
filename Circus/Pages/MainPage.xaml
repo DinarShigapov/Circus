@@ -8,6 +8,33 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPage">
 
+
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="DarkCyan"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="0 10 10 10"/>
+            <Setter Property="FontFamily" Value="Bahnschrift SemiLight"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="0 15 15 0"
+                        Padding="6 10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF096363" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
