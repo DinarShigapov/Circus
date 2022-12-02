@@ -23,11 +23,13 @@ namespace Circus.Pages
         public MainPage()
         {
             InitializeComponent();
+            MenuFrame.Navigate(new AnimalsPage());
         }
 
         private void BAnimalManagement_Click(object sender, RoutedEventArgs e)
         {
             MenuFrame.Navigate(new AnimalsPage());
         }
+
     }
 }

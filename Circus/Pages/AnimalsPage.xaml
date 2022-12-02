@@ -6,13 +6,14 @@
       xmlns:local="clr-namespace:Circus.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AnimalsPage">
+      Title="AnimalsPage"
+      Loaded="Page_Loaded">
 
     <Grid>
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                 <TextBlock Text="Поиск"/>
-                <TextBox x:Name="TBSearch" Width="200"/>
+                <TextBox x:Name="TBSearch" Width="200" TextChanged="TBSearch_TextChanged"/>
                 <Button x:Name="BAdd" Content="Добавить" Click="BAdd_Click"/>
                 <Button x:Name="BEdit" Content="Изменить" Click="BEdit_Click"/>
                 <Button x:Name="BRemove" Content="Удалить" Click="BRemove_Click"/>
