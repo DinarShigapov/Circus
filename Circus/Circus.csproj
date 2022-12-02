@@ -76,6 +76,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AnimalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AnimalsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,6 +147,9 @@
     </Compile>
     <Compile Include="Model\TicketSale.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AnimalPage.xaml.cs">
+      <DependentUpon>AnimalPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AnimalsPage.xaml.cs">
       <DependentUpon>AnimalsPage.xaml</DependentUpon>

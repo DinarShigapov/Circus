@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Circus.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace Circus.Pages
     /// </summary>
     public partial class AnimalsPage : Page
     {
+
+
         public AnimalsPage()
         {
             InitializeComponent();
@@ -28,12 +31,13 @@ namespace Circus.Pages
 
         private void BAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AnimalPage(new Animal()));
         }
 
         private void BEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            var selectedAnimal = LVAnimals.SelectedItem as Animal;
+            NavigationService.Navigate(new AnimalPage(selectedAnimal));
         }
 
         private void BRemove_Click(object sender, RoutedEventArgs e)
