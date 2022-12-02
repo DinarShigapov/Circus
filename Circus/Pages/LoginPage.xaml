@@ -8,14 +8,42 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginPage">
 
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="DarkCyan"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Bahnschrift SemiLight"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="15"
+                        Width="100"
+                        Height="25"
+                        Padding="0 5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF096363" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
     <Grid>
         <StackPanel Orientation="Vertical" 
                     VerticalAlignment="Center" 
                     HorizontalAlignment="Center">
-            <TextBlock Text="Телефон"/>
-            <TextBox x:Name="TBPhone"/>
-            <TextBlock Text="Пароль"/>
-            <PasswordBox x:Name="PBPassword"/>
+            <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize="20" FontFamily="Bahnschrift SemiLight" Margin="0 0 0 10"/>
+            <TextBlock FontFamily="Bahnschrift SemiLight" Text="Телефон"/>
+            <TextBox Margin="0 0 0 10" x:Name="TBPhone"/>
+            <TextBlock FontFamily="Bahnschrift SemiLight" Text="Пароль"/>
+            <PasswordBox Margin="0 0 0 10" x:Name="PBPassword"/>
             <Button x:Name="BLogin" Content="Войти" Width="200" Click="BLogin_Click"/>
         </StackPanel>
     </Grid>

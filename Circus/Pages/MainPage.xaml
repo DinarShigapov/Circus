@@ -13,7 +13,7 @@
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="DarkCyan"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Margin" Value="0 10 10 10"/>
+            <Setter Property="Margin" Value="0 5 10 0"/>
             <Setter Property="FontFamily" Value="Bahnschrift SemiLight"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -44,6 +44,7 @@
             <Button x:Name="BAnimalManagement" 
                     Content="Управление животными" 
                     Click="BAnimalManagement_Click"/>
+
         </StackPanel>
         <Frame x:Name="MenuFrame" 
                NavigationUIVisibility="Hidden" 
