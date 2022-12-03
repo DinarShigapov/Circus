@@ -1,6 +1,8 @@
 ﻿using Circus.Model;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +64,17 @@ namespace Circus.Pages
             App.DB.SaveChanges();
             NavigationService.GoBack();
 
+        }
+
+        private void BEditImage_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            if (dialog.ShowDialog().GetValueOrDefault())
+            {
+                contextAnimal.Image = File.ReadAllBytes(dialog.FileName);
+                DataContext = null;
+                DataContext = contextAnimal;
+            }
         }
 
         private void BCancel_Click(object sender, RoutedEventArgs e)

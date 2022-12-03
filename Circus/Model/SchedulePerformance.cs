@@ -21,7 +21,7 @@ namespace Circus.Model
         public Nullable<int> AnimalId { get; set; }
     
         public virtual Animal Animal { get; set; }
-        public virtual Performance Performance { get; set; }
         public virtual Employee Employee { get; set; }
+        public virtual Performance Performance { get; set; }
     }
 }

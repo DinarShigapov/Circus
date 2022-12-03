@@ -15,10 +15,10 @@ namespace Circus.Model
     public partial class ItemEmployee
     {
         public int Id { get; set; }
-        public Nullable<int> EmployeeId { get; set; }
-        public Nullable<int> ItemId { get; set; }
+        public int EmployeeId { get; set; }
+        public int ItemId { get; set; }
     
-        public virtual Item Item { get; set; }
         public virtual Employee Employee { get; set; }
+        public virtual Item Item { get; set; }
     }
 }

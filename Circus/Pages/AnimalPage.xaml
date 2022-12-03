@@ -9,6 +9,11 @@
       Title="AnimalPage">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Orientation="Vertical">
             <TextBlock Text="Кличка"/>
             <TextBox Text="{Binding Name}"/>
@@ -28,6 +33,13 @@
             <Button x:Name="BCancel"
                 Content="Отмена"
                 Click="BCancel_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Image Height="300"
+                   Source="{Binding Image}" />
+            <Button x:Name="BEditImage"
+                    Content="Изменить фото"
+                    Click="BEditImage_Click" />
         </StackPanel>
     </Grid>
 </Page>

@@ -23,8 +23,9 @@ namespace Circus.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<int> Age { get; set; }
-        public Nullable<int> TypeId { get; set; }
-        public Nullable<int> CageId { get; set; }
+        public int TypeId { get; set; }
+        public int CageId { get; set; }
+        public byte[] Image { get; set; }
     
         public virtual AnimalType AnimalType { get; set; }
         public virtual Cage Cage { get; set; }

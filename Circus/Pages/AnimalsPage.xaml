@@ -30,40 +30,7 @@
                 </Style>
             </Style.Resources>
         </Style>
-        
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontFamily" Value="Bahnschrift Light"/>
-            <Setter Property="Effect">
-                <Setter.Value>
-                    <DropShadowEffect BlurRadius="0" ShadowDepth="1" Opacity="0.4" Direction="300"/>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="border" BorderThickness="0"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="Black"
-                        CornerRadius="15"
-                        Margin="5 0"
-                        Padding="10 6">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" >
-                                    <Setter.Value>
-                                        <SolidColorBrush Color="Black" Opacity="0.5"/>
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+
     </Page.Resources>
 
 
@@ -72,9 +39,9 @@
             <StackPanel Margin="10" DockPanel.Dock="Top" Orientation="Horizontal">
                 <TextBlock FontSize="15" FontFamily="Bahnschrift Light" VerticalAlignment="Center" Text="Поиск"/>
                 <TextBox Margin="5 0" x:Name="TBSearch" Width="200" TextChanged="TBSearch_TextChanged"/>
-                <Button x:Name="BAdd" Background="#FF21A057" Content="Добавить" Click="BAdd_Click"/>
-                <Button x:Name="BEdit" Background="#FF2B81BB" Content="Изменить" Click="BEdit_Click"/>
-                <Button x:Name="BRemove" Background="#FFD24435" Content="Удалить" Click="BRemove_Click"/>
+                <Button x:Name="BAdd" Content="Добавить" Click="BAdd_Click"/>
+                <Button x:Name="BEdit"  Content="Изменить" Click="BEdit_Click"/>
+                <Button x:Name="BRemove" Content="Удалить" Click="BRemove_Click"/>
             </StackPanel>
             <ListView  x:Name="LVAnimals" d:ItemsSource="{d:SampleData ItemCount=5}">
                 <ListView.ItemTemplate>
@@ -91,12 +58,12 @@
                                         <RowDefinition Height="30"/>
                                         <RowDefinition Height="50"/>
                                     </Grid.RowDefinitions>
-                                    <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
+                                    <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Text="{Binding Name, StringFormat='Кличка: {0}'}"/>
 
-                                    <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding Age}"/>
-                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding AnimalType.Name}" Grid.Column="1" Grid.Row="2"></TextBlock>
+                                    <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding Age, StringFormat='Возраст: {0}'}"/>
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding AnimalType.Name, StringFormat='Вид: {0}'}" Grid.Column="1" Grid.Row="2"></TextBlock>
 
-                                    <Image Grid.Column="0" Grid.RowSpan="4" Source="{Binding MainImage}"></Image>
+                                    <Image Grid.Column="0" Grid.RowSpan="4" Source="{Binding Image}"></Image>
                                 </Grid>
                             </Border>
                         </StackPanel>

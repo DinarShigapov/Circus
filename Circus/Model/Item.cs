@@ -22,7 +22,7 @@ namespace Circus.Model
     
         public int id { get; set; }
         public string Name { get; set; }
-        public Nullable<int> TypeId { get; set; }
+        public int TypeId { get; set; }
         public byte[] Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
