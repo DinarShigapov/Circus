@@ -53,7 +53,7 @@
                     Content="Отмена"
                     Click="BCancel_Click" />
         </StackPanel>
-        <StackPanel Grid.Column="1">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Width="250">
             <Image Height="300"
                    Source="{Binding Image}" />
             <Button x:Name="BEditImage"
