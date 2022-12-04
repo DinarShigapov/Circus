@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:Circus"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="MainColorBgd" Color="#F1C884"/>
+        <SolidColorBrush x:Key="BttColorMP" Color="#DCB77A"/>
     </Application.Resources>
 </Application>

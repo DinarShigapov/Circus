@@ -30,43 +30,42 @@
                 </Style>
             </Style.Resources>
         </Style>
-
+        <Style TargetType="TextBlock" x:Key="infoTxt">
+            <Setter Property="FontFamily" Value="Bahnschrift Light"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
     </Page.Resources>
 
 
     <Grid>
         <DockPanel>
             <StackPanel Margin="10" DockPanel.Dock="Top" Orientation="Horizontal">
-                <TextBlock FontSize="15" FontFamily="Bahnschrift Light" VerticalAlignment="Center" Text="Поиск"/>
+                <TextBlock Style="{StaticResource infoTxt}" VerticalAlignment="Center" Text="Поиск"/>
                 <TextBox Margin="5 0" x:Name="TBSearch" Width="200" TextChanged="TBSearch_TextChanged"/>
                 <Button x:Name="BAdd" Content="Добавить" Click="BAdd_Click"/>
                 <Button x:Name="BEdit"  Content="Изменить" Click="BEdit_Click"/>
                 <Button x:Name="BRemove" Content="Удалить" Click="BRemove_Click"/>
             </StackPanel>
-            <ListView  x:Name="LVAnimals" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView BorderThickness="0"  x:Name="LVAnimals" d:ItemsSource="{d:SampleData ItemCount=3}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel  Orientation="Horizontal" Width="744" HorizontalAlignment="Left"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
-                            <Border Width="750" Background="{Binding Color}" BorderBrush="LightGray" BorderThickness="2">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="150"/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="35"/>
-                                        <RowDefinition Height="30"/>
-                                        <RowDefinition Height="50"/>
-                                    </Grid.RowDefinitions>
-                                    <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Text="{Binding Name, StringFormat='Кличка: {0}'}"/>
-
-                                    <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding Age, StringFormat='Возраст: {0}'}"/>
-                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding AnimalType.Name, StringFormat='Вид: {0}'}" Grid.Column="1" Grid.Row="2"></TextBlock>
-
-                                    <Image Grid.Column="0" Grid.RowSpan="4" Source="{Binding Image}"></Image>
-                                </Grid>
-                            </Border>
-                        </StackPanel>
+                        <Border Padding="10" Width="300" CornerRadius="20"  BorderBrush="{DynamicResource BttColorMP}" BorderThickness="1">
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel  VerticalAlignment="Center">
+                                    <Image Width="100" Height="100" VerticalAlignment="Center" Source="{Binding Image}"/>
+                                </StackPanel>
+                                <StackPanel Margin="20 0">
+                                    <TextBlock Style="{StaticResource infoTxt}" Text="{Binding Name, StringFormat='Кличка: {0}'}"/>
+                                    <TextBlock Style="{StaticResource infoTxt}" Text="{Binding Age, StringFormat='Возраст: {0}'}"/>
+                                    <TextBlock Style="{StaticResource infoTxt}" Text="{Binding AnimalType.Name, StringFormat='Вид: {0}'}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

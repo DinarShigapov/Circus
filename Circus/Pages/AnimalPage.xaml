@@ -14,7 +14,7 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Orientation="Vertical">
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Orientation="Vertical">
             <TextBlock Text="Кличка"/>
             <TextBox Text="{Binding Name}"/>
             <TextBlock Text="Возраст"/>
@@ -34,7 +34,7 @@
                 Content="Отмена"
                 Click="BCancel_Click"/>
         </StackPanel>
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center"> 
             <Image Height="300"
                    Source="{Binding Image}" />
             <Button x:Name="BEditImage"

@@ -11,16 +11,20 @@
 
     <Page.Resources>
         <Style TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#FF096363"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Margin" Value="10 5 0 0"/>
+            <Setter Property="Background" Value="{DynamicResource BttColorMP}"/>
+            <Setter Property="Foreground" Value="#1E1E1E"/>
+            <Setter Property="Margin" Value="0 3"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Width" Value="104"/>
             <Setter Property="FontFamily" Value="Bahnschrift SemiLight"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border" BorderThickness="0"
                         Background="{TemplateBinding Background}"
-                        CornerRadius="15 0 0 15"
+                        CornerRadius="18 0 0 18"
                         Padding="6 10">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
@@ -45,34 +49,34 @@
             <ColumnDefinition Width="auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <StackPanel Background="#FFE94D25"
-                    Grid.ColumnSpan="2">
-            <Border Margin="20 5" 
-                    CornerRadius="30" 
-                    BorderThickness="1" 
-                    Background="#FFF5EFBD" 
-                    Height="50">
-                <TextBlock VerticalAlignment="Center" 
-                       Text="CIRCUS"
-                       HorizontalAlignment="Center"
-                       FontSize="30" />
-            </Border>
-        </StackPanel>
+
+
         <StackPanel Grid.Row="1" 
-                    Width="150"
-                    Background="#FF1B8890">
+                    Width="126"
+                    Background="{DynamicResource MainColorBgd}">
+            <Button Height="20" Visibility="Hidden"/>
             <Button x:Name="BAnimalManagement"
-                    Content="Управление животными"
+                    Content="Животные"
                     Click="BAnimalManagement_Click"
-                    Visibility="Collapsed" />
+                    Visibility="Visible" />
             <Button x:Name="BEmployeeManagement"
                     Content="Сотрудники"
                     Click="BEmployeeManagement_Click" 
-                    Visibility="Collapsed"/>
+                    Visibility="Visible"/>
+            <Button x:Name="Test"
+                    Content="Кнопка"
+                    Click="BEmployeeManagement_Click" 
+                    Visibility="Visible"/>
         </StackPanel>
         <Frame x:Name="MenuFrame"
                NavigationUIVisibility="Hidden"
                Grid.Column="1"
                Grid.Row="1" />
+        <Rectangle Grid.ColumnSpan="2" Fill="{DynamicResource MainColorBgd}">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#DD9883" BlurRadius="0"  Direction="270" Opacity="0.4" RenderingBias="Quality" ShadowDepth="3"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" Height="75" Margin="14" Source="/Resources/logoCircus.png" Grid.Column="0"/>
     </Grid>
 </Page>
