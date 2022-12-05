@@ -30,9 +30,5 @@ namespace HR_Manager.Pages
         }
 
 
-        private void BEmployeeManagement_Click(object sender, RoutedEventArgs e)
-        {
-            MenuFrame.Navigate(new EmployeesPage());
-        }
     }
 }
