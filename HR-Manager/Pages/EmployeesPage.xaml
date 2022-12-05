@@ -1,0 +1,84 @@
+﻿<Page x:Class="HR_Manager.Pages.EmployeesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR_Manager.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EmployeesPage">
+
+    <Page.Resources>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,0,0,0"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="Black" Opacity="0.07"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="CornerRadius" Value="15" />
+                </Style>
+            </Style.Resources>
+        </Style>
+
+    </Page.Resources>
+
+
+    <Grid>
+        <DockPanel>
+            <StackPanel Margin="10" DockPanel.Dock="Top"
+                        Orientation="Horizontal">
+                <TextBlock  FontSize="15" FontFamily="Bahnschrift Light" VerticalAlignment="Center"  Text="Поиск" />
+                <TextBox x:Name="TBSearch"
+                         Width="200"
+                         TextChanged="TBSearch_TextChanged" />
+                <Button x:Name="BAdd"
+                        Content="Добавить"
+                        Click="BAdd_Click" />
+                <Button x:Name="BEdit"
+                        Content="Изменить"
+                        Click="BEdit_Click" />
+                <Button x:Name="BRemove"
+                        Content="Удалить"
+                        Click="BRemove_Click" />
+            </StackPanel>
+            <ListView x:Name="LVEmployees" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="750" Background="{Binding Color}" BorderBrush="LightGray" BorderThickness="2">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.Column="1">
+                                    <TextBlock Text="{Binding LastName, StringFormat='Фамилия: {0}'}" />
+                                    <TextBlock Text="{Binding FirstName, StringFormat='Имя: {0}'}" />
+                                </StackPanel>
+                                <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding Salary, StringFormat='Зарплата: {0} руб.'}"/>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding Post.Name, StringFormat='Должность: {0}'}" Grid.Column="1" Grid.Row="2"></TextBlock>
+
+                                <Image Grid.Column="0" Grid.RowSpan="4" Source="{Binding Image}"></Image>
+                            </Grid>
+                        </Border>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </DockPanel>
+    </Grid>
+</Page>

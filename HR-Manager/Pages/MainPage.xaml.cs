@@ -13,18 +13,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Circus.Pages
+namespace HR_Manager.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class MainPage : Page
     {
-        public LoginPage()
+        public MainPage()
         {
             InitializeComponent();
+
+
         }
 
 
+
+        private void BEmployeeManagement_Click(object sender, RoutedEventArgs e)
+        {
+            MenuFrame.Navigate(new EmployeesPage());
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HR_Manager.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,18 +14,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Circus.Pages
+namespace HR_Manager
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class MainWindow : Window
     {
-        public LoginPage()
+        public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new LoginPage());
         }
-
-
     }
 }
