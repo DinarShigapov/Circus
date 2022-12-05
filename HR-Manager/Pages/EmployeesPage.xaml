@@ -9,7 +9,6 @@
       Title="EmployeesPage">
 
     <Page.Resources>
-
         <Style TargetType="{x:Type TextBox}">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Padding" Value="10,0,0,0"/>
@@ -29,7 +28,6 @@
                 </Style>
             </Style.Resources>
         </Style>
-
     </Page.Resources>
 
 

@@ -6,5 +6,34 @@
     <Application.Resources>
         <SolidColorBrush x:Key="MainColorBgd" Color="#F1C884"/>
         <SolidColorBrush x:Key="BttColorMP" Color="#DCB77A"/>
+
+        <Style TargetType="{x:Type Button}" x:Key="VerMenuBtt">
+            <Setter Property="Background" Value="{DynamicResource BttColorMP}"/>
+            <Setter Property="Foreground" Value="#1E1E1E"/>
+            <Setter Property="Margin" Value="0 3"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Width" Value="104"/>
+            <Setter Property="FontFamily" Value="Bahnschrift SemiLight"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="18 0 0 18"
+                        Padding="6 10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter TargetName="border" Property="Background" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
