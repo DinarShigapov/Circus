@@ -30,7 +30,6 @@
         </Style>
     </Page.Resources>
 
-
     <Grid>
         <DockPanel>
             <StackPanel Margin="10" DockPanel.Dock="Top"

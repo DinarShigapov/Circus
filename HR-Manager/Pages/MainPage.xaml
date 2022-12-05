@@ -14,25 +14,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
 
-
-        <StackPanel Grid.Row="1" 
-                    Width="126"
-                    Background="{DynamicResource MainColorBgd}">
-            <Button Height="20" Visibility="Hidden"/>
-            <Button Style="{StaticResource VerMenuBtt}" x:Name="BEmployeeManagement"
-                    Content="Сотрудники"
-                    Click="BEmployeeManagement_Click" 
-                    Visibility="Visible"/>
-            <Button Style="{StaticResource VerMenuBtt}" x:Name="Test"
-                    Content="Кнопка"
-                    Click="BEmployeeManagement_Click" 
-                    Visibility="Visible"/>
-        </StackPanel>
         <Frame x:Name="MenuFrame"
                NavigationUIVisibility="Hidden"
                Grid.Column="1"
@@ -42,6 +24,13 @@
                 <DropShadowEffect Color="#DD9883" BlurRadius="0"  Direction="270" Opacity="0.4" RenderingBias="Quality" ShadowDepth="3"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Image RenderOptions.BitmapScalingMode="HighQuality" Height="75" Margin="14" Source="/Resources/logoCircus.png" />
+        <Image HorizontalAlignment="Left" RenderOptions.BitmapScalingMode="HighQuality" Height="75" Margin="14" Source="/Resources/logoCircus.png" />
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+            <StackPanel Margin="0 -10 10 0" Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock x:Name="TFullName" FontSize="20" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="TPost" FontSize="13" Margin="0 -5" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <Image Margin="0 0 20 0" RenderOptions.BitmapScalingMode="HighQuality" Width="50" Opacity="0.5" Source="/Resources/AuthUser.png" />
+        </StackPanel>
     </Grid>
 </Page>

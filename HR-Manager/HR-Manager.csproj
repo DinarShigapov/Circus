@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -202,6 +203,8 @@
       <DependentUpon>DBCircus.edmx</DependentUpon>
       <LastGenOutput>DBCircus.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\AuthUser.png" />
+    <Resource Include="Resources\user.png" />
     <Resource Include="Resources\logoCircus.png" />
   </ItemGroup>
   <ItemGroup>

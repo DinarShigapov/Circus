@@ -23,16 +23,16 @@ namespace HR_Manager.Pages
         public MainPage()
         {
             InitializeComponent();
-
-
+            var user = App.LoggedEmployee;
+            TFullName.Text = $"{user.LastName} {user.FirstName.ToCharArray()[0]}. {user.Patronymic.ToCharArray()[0]}.";
+            TPost.Text = user.Post.Name;
+            MenuFrame.Navigate(new EmployeesPage());
         }
-
 
 
         private void BEmployeeManagement_Click(object sender, RoutedEventArgs e)
         {
             MenuFrame.Navigate(new EmployeesPage());
-
         }
     }
 }
