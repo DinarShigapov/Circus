@@ -7,6 +7,10 @@
         <SolidColorBrush x:Key="MainColorBgd" Color="#F1C884"/>
         <SolidColorBrush x:Key="BttColorMP" Color="#DCB77A"/>
 
+        <Style x:Key="Jost" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Fonts/#Jost" />
+        </Style>
+
         <Style TargetType="{x:Type Button}" x:Key="VerMenuBtt">
             <Setter Property="Background" Value="{DynamicResource BttColorMP}"/>
             <Setter Property="Foreground" Value="#1E1E1E"/>

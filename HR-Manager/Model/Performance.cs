@@ -23,9 +23,9 @@ namespace HR_Manager.Model
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<System.DateTime> DateTime { get; set; }
-        public Nullable<decimal> TicketPrice { get; set; }
-        public Nullable<int> TicketAmount { get; set; }
+        public System.DateTime DateTime { get; set; }
+        public decimal TicketPrice { get; set; }
+        public int TicketAmount { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SchedulePerformance> SchedulePerformance { get; set; }

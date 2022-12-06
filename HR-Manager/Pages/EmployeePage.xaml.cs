@@ -28,7 +28,6 @@ namespace HR_Manager.Pages
         public EmployeePage(Employee employee)
         {
             InitializeComponent();
-            CBPosts.ItemsSource = App.DB.Post.ToList();
             contextEmployee = employee;
             DataContext = contextEmployee;
         }

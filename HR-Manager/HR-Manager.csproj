@@ -96,55 +96,55 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Animal.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\AnimalType.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Cage.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CircusDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CircusDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CircusDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CircusDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Client.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\DBCircus.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBCircus.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\DBCircus.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBCircus.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\DBCircus.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBCircus.edmx</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Employee.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Item.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ItemEmployee.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ItemType.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Performance.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Post.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SchedulePerformance.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TicketSale.cs">
-      <DependentUpon>DBCircus.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\EmployeePage.xaml.cs">
       <DependentUpon>EmployeePage.xaml</DependentUpon>
@@ -175,12 +175,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\DBCircus.edmx">
+    <EntityDeploy Include="Model\CircusDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBCircus.Designer.cs</LastGenOutput>
+      <LastGenOutput>CircusDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\DBCircus.edmx.diagram">
-      <DependentUpon>DBCircus.edmx</DependentUpon>
+    <Resource Include="Fonts\Jost-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Model\CircusDB.edmx.diagram">
+      <DependentUpon>CircusDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -191,18 +194,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Model\DBCircus.Context.tt">
+    <Content Include="Model\CircusDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBCircus.Context.cs</LastGenOutput>
-      <DependentUpon>DBCircus.edmx</DependentUpon>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+      <LastGenOutput>CircusDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\DBCircus.tt">
+    <Content Include="Model\CircusDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBCircus.edmx</DependentUpon>
-      <LastGenOutput>DBCircus.cs</LastGenOutput>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+      <LastGenOutput>CircusDB.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\AuthUser.png" />
     <Resource Include="Resources\user.png" />
     <Resource Include="Resources\logoCircus.png" />
@@ -210,5 +214,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

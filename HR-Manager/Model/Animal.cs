@@ -22,7 +22,7 @@ namespace HR_Manager.Model
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<int> Age { get; set; }
+        public int Age { get; set; }
         public int TypeId { get; set; }
         public int CageId { get; set; }
         public byte[] Image { get; set; }

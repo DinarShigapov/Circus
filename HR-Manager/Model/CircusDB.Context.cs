@@ -13,10 +13,10 @@ namespace HR_Manager.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Shigapov326Entities : DbContext
+    public partial class CircusEntities : DbContext
     {
-        public Shigapov326Entities()
-            : base("name=Shigapov326Entities")
+        public CircusEntities()
+            : base("name=CircusEntities")
         {
         }
     

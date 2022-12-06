@@ -15,9 +15,9 @@ namespace HR_Manager.Model
     public partial class SchedulePerformance
     {
         public int Id { get; set; }
-        public Nullable<int> PerformanceId { get; set; }
-        public Nullable<System.TimeSpan> Time { get; set; }
-        public Nullable<int> EmployeeId { get; set; }
+        public int PerformanceId { get; set; }
+        public System.TimeSpan Time { get; set; }
+        public int EmployeeId { get; set; }
         public Nullable<int> AnimalId { get; set; }
     
         public virtual Animal Animal { get; set; }
