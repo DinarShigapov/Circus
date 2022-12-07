@@ -118,9 +118,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CircusDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Client.cs">
-      <DependentUpon>CircusDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Employee.cs">
       <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
