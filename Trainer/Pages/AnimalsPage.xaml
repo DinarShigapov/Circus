@@ -8,7 +8,66 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AnimalsPage">
 
+    <Page.Resources>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,0,0,0"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="Black" Opacity="0.07"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="CornerRadius" Value="15" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="infoTxt">
+            <Setter Property="FontFamily" Value="Bahnschrift Light"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+    </Page.Resources>
+
+
     <Grid>
-        
+        <DockPanel>
+            <StackPanel Margin="10" DockPanel.Dock="Top" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource infoTxt}" VerticalAlignment="Center" Text="Поиск"/>
+                <TextBox Margin="5 0" x:Name="TBSearch" Width="200" TextChanged="TBSearch_TextChanged"/>
+                <Button x:Name="BAdd" Content="Добавить" Click="BAdd_Click"/>
+                <Button x:Name="BEdit"  Content="Изменить" Click="BEdit_Click"/>
+                <Button x:Name="BRemove" Content="Удалить" Click="BRemove_Click"/>
+            </StackPanel>
+            <ListView BorderThickness="0"  x:Name="LVAnimals">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel  Orientation="Horizontal" Width="744" HorizontalAlignment="Left"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="10" Width="300" CornerRadius="20"  BorderBrush="{DynamicResource BttColorMP}" BorderThickness="1">
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel  VerticalAlignment="Center">
+                                    <Image Width="100" Height="100" VerticalAlignment="Center" Source="{Binding Image}"/>
+                                </StackPanel>
+                                <StackPanel Margin="20 0">
+                                    <TextBlock Style="{StaticResource infoTxt}" Text="{Binding Name, StringFormat='Кличка: {0}'}"/>
+                                    <TextBlock Style="{StaticResource infoTxt}" Text="{Binding Age, StringFormat='Возраст: {0}'}"/>
+                                    <TextBlock Style="{StaticResource infoTxt}" Text="{Binding AnimalType.Name, StringFormat='Вид: {0}'}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </DockPanel>
     </Grid>
 </Page>

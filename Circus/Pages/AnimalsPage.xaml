@@ -46,7 +46,7 @@
                 <Button x:Name="BEdit"  Content="Изменить" Click="BEdit_Click"/>
                 <Button x:Name="BRemove" Content="Удалить" Click="BRemove_Click"/>
             </StackPanel>
-            <ListView BorderThickness="0"  x:Name="LVAnimals" d:ItemsSource="{d:SampleData ItemCount=3}">
+            <ListView BorderThickness="0"  x:Name="LVAnimals">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel  Orientation="Horizontal" Width="744" HorizontalAlignment="Left"/>

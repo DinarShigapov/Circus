@@ -9,6 +9,37 @@
       Title="AnimalPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Orientation="Vertical">
+            <TextBlock Text="Кличка"/>
+            <TextBox Text="{Binding Name}"/>
+            <TextBlock Text="Возраст"/>
+            <TextBox Text="{Binding Age}"/>
+            <TextBlock Text="Вид"/>
+            <ComboBox x:Name="CBTypes" 
+                      SelectedItem="{Binding AnimalType}"
+                      DisplayMemberPath="Name"/>
+            <TextBlock Text="Клетка"/>
+            <ComboBox x:Name="CBCages" 
+                      SelectedItem="{Binding Cage}"
+                      DisplayMemberPath="Name"/>
+            <Button x:Name="BSave"
+                Content="Сохранить"
+                Click="BSave_Click"/>
+            <Button x:Name="BCancel"
+                Content="Отмена"
+                Click="BCancel_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Image Height="300"
+                   Source="{Binding Image}" />
+            <Button x:Name="BEditImage"
+                    Content="Изменить фото"
+                    Click="BEditImage_Click" />
+        </StackPanel>
     </Grid>
 </Page>

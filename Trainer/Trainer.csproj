@@ -194,7 +194,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Folder Include="Fonts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\CircusDB.Context.tt">
@@ -207,6 +207,9 @@
       <DependentUpon>CircusDB.edmx</DependentUpon>
       <LastGenOutput>CircusDB.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\user.png" />
+    <Resource Include="Resources\logoCircus.png" />
+    <Resource Include="Resources\AuthUser.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

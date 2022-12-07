@@ -38,7 +38,7 @@ namespace Trainer.Pages
                 MessageBox.Show("Пароль неверный");
                 return;
             }
-            if (employee.PostId != 5)
+            if (employee.PostId != 3)
             {
                 MessageBox.Show("Это приложение доступно только для HR-Manager'a");
                 return;
