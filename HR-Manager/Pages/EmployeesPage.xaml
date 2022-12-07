@@ -58,17 +58,17 @@
                         Margin="5 0"
                         Background="#FFDB8A8A"/>
             </StackPanel>
-            <ListView x:Name="LVEmployees" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView x:Name="LVEmployees">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel Orientation="Horizontal" Height="462" Width="743"/>
+                        <WrapPanel Orientation="Horizontal" Height="462" Width="800"/>
                     </ItemsPanelTemplate>
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border CornerRadius="20" Padding="5 10" Width="230" BorderBrush="Transparent" BorderThickness="2">
+                        <Border CornerRadius="20" Padding="5 10" Width="255" BorderBrush="Transparent" BorderThickness="2">
                             <Border.Background>
-                                <SolidColorBrush Color="#FFD9D9D9" Opacity="0.1"/>
+                                <SolidColorBrush Color="#FFD9D9D9" Opacity="0.2"/>
                             </Border.Background>
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -83,19 +83,21 @@
                                 <TextBlock Style="{StaticResource JostO}" 
                                            Text="{Binding Post.Name}" 
                                            Grid.Column="1"
-                                           FontSize="12" 
+                                           FontSize="13" 
                                            VerticalAlignment="Center"/>
                                 <TextBlock Style="{StaticResource Jost}"
                                            Text="{Binding StrFullName}"
                                            Grid.Column="1"
                                            Grid.Row="1" 
-                                           VerticalAlignment="Center"/>
+                                           VerticalAlignment="Center"
+                                           FontSize="14"/>
                                 <TextBlock Style="{StaticResource Jost}" 
                                            Grid.Row="2" Grid.Column="1" 
                                            Text="{Binding Salary, StringFormat='₽ {0}'}" 
                                            VerticalAlignment="Bottom"
-                                           Margin="0 0 0 10"/>
-                                <Image Grid.Column="0" RenderOptions.BitmapScalingMode="HighQuality" Grid.RowSpan="3" Source="{Binding Image}" Margin="10,10,10,10"/>
+                                           Margin="0 0 0 10"
+                                           FontSize="14"/>
+                                <Image Grid.Column="0" Stretch="UniformToFill" RenderOptions.BitmapScalingMode="HighQuality" Grid.RowSpan="3" Source="{Binding Image}" Margin="10,10,10,10"/>
                             </Grid>
                         </Border>
                     </DataTemplate>

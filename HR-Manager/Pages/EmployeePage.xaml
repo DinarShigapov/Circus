@@ -14,7 +14,7 @@
             <Setter Property="Height" Value="24"/>
         </Style>
     </Page.Resources>
-    
+
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"/>
@@ -27,19 +27,19 @@
             <UniformGrid HorizontalAlignment="Left" Width="545">
                 <StackPanel Margin="0 0 14 25" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Фамилия"/>
-                    <TextBox BorderThickness="0 0 0 2" Text="{Binding LastName}"/>
+                    <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding LastName}"/>
                 </StackPanel>
                 <StackPanel  Margin="7 0 7 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Имя"/>
-                    <TextBox BorderThickness="0 0 0 2" Text="{Binding FirstName}"/>
+                    <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding FirstName}"/>
                 </StackPanel>
                 <StackPanel Margin="14 0 0 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Отчество"/>
-                    <TextBox BorderThickness="0 0 0 2" Text="{Binding Patronymic}"/>
+                    <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding Patronymic}"/>
                 </StackPanel>
                 <StackPanel Margin="0 0 14 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Email"/>
-                    <TextBox BorderThickness="0 0 0 2" Text="{Binding Address}"/>
+                    <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding Address}"/>
                 </StackPanel>
                 <StackPanel Margin="7 0 7 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Должность"/>
@@ -49,17 +49,20 @@
                         Height="24" 
                         BorderThickness="0 0 0 2"
                         DisplayMemberPath="Name"
-                        SelectedItem="{Binding Post}"/>
+                        SelectedItem="{Binding Post}"
+                        FontSize="15"/>
                 </StackPanel>
                 <StackPanel Margin="14 0 0 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="День рождения"/>
                     <DatePicker BorderThickness="0 0 0 2" Height="24"
-                                SelectedDate="{Binding Birthday}"/>
+                                SelectedDate="{Binding Birthday}"
+                                FontSize="15"/>
                 </StackPanel>
                 <StackPanel Margin="0 0 14 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}"  Text="Телефон"/>
                     <TextBox BorderThickness="0 0 0 2"
-                             Text="{Binding Phone}"/>
+                             Text="{Binding Phone}"
+                             FontSize="15"/>
                 </StackPanel>
                 <StackPanel Margin="7 0 7 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Зарплата"/>
@@ -67,22 +70,31 @@
                         Text="{Binding Salary}"
                         BorderThickness="0 0 0 2"
                         MaxLength="7"
-                        PreviewTextInput="Digits_PreviewTextInput"/>
+                        PreviewTextInput="Digits_PreviewTextInput"
+                        FontSize="15"/>
                 </StackPanel>
                 <StackPanel Margin="14 0 0 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Пароль"/>
                     <TextBox
                         Text="{Binding Password}"
                         MaxLength="50" 
-                        BorderThickness="0 0 0 2"/>
+                        BorderThickness="0 0 0 2"
+                        FontSize="15"/>
                 </StackPanel>
             </UniformGrid>
-            <StackPanel Margin="30 0 0 0">
-                <Ellipse Height="160" Width="160">
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="{Binding Image}" Stretch="UniformToFill"/>
-                    </Ellipse.Fill>
-                </Ellipse>
+            <StackPanel Margin="50 0 0 0">
+                <Grid>
+                    <Ellipse Height="170" Width="170">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding Image}" Stretch="UniformToFill"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Ellipse Height="170" Width="170">
+                        <Ellipse.Fill>
+                            <SolidColorBrush Color="Black" Opacity="0.03"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
                 <Button x:Name="BEditImage"
                         Style="{DynamicResource RoundButton}" 
                         Height="30"

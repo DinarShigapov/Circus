@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Trainer.Model;
 
 namespace Trainer
 {
@@ -13,5 +14,7 @@ namespace Trainer
     /// </summary>
     public partial class App : Application
     {
+        public static CircusEntities DB = new CircusEntities();
+        public static Employee LoggedEmployee;
     }
 }

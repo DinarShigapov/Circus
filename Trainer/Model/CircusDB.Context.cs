@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HR_Manager.Model
+namespace Trainer.Model
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CircusDBEntities : DbContext
+    public partial class CircusEntities : DbContext
     {
-        public CircusDBEntities()
-            : base("name=CircusDBEntities")
+        public CircusEntities()
+            : base("name=CircusEntities")
         {
         }
     

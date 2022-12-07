@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HR_Manager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        Title="MainWindow" 
+        Height="500" 
+        Width="850" 
+        WindowStyle="ToolWindow" 
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>

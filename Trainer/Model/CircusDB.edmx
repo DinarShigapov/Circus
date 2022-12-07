@@ -599,7 +599,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CircusDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CircusEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Animal" EntityType="Self.Animal" />
           <EntitySet Name="AnimalType" EntityType="Self.AnimalType" />
           <EntitySet Name="Cage" EntityType="Self.Cage" />
@@ -663,7 +663,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Shigapov326ModelContainer" CdmEntityContainer="CircusDBEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Shigapov326ModelContainer" CdmEntityContainer="CircusEntities">
           <EntitySetMapping Name="Animal">
             <EntityTypeMapping TypeName="Shigapov326Model.Animal">
               <MappingFragment StoreEntitySet="Animal">
