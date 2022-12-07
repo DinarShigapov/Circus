@@ -134,6 +134,7 @@
     <Compile Include="Model\ItemType.cs">
       <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\PartialClass\Employee.cs" />
     <Compile Include="Model\Performance.cs">
       <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>

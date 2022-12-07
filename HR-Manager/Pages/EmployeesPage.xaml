@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:HR_Manager.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="EmployeesPage">
+      Title="EmployeesPage"
+      Loaded="Page_Loaded">
 
     <Page.Resources>
         <Style TargetType="{x:Type TextBox}">
@@ -34,45 +35,69 @@
         <DockPanel>
             <StackPanel Margin="10" DockPanel.Dock="Top"
                         Orientation="Horizontal">
-                <TextBlock  FontSize="15" FontFamily="Bahnschrift Light" VerticalAlignment="Center"  Text="Поиск" />
+                <TextBlock Margin="10 0" FontSize="15" FontFamily="Bahnschrift Light" VerticalAlignment="Center"  Text="Поиск" />
                 <TextBox x:Name="TBSearch"
                          Width="200"
                          TextChanged="TBSearch_TextChanged" />
                 <Button x:Name="BAdd"
                         Content="Добавить"
-                        Click="BAdd_Click" />
+                        Click="BAdd_Click" 
+                        Style="{DynamicResource RoundButton}"
+                        Margin="10 0 5 0"
+                        Background="#FFB2DB8A"/>
                 <Button x:Name="BEdit"
                         Content="Изменить"
-                        Click="BEdit_Click" />
+                        Click="BEdit_Click" 
+                        Style="{DynamicResource RoundButton}"
+                        Margin="5 0"
+                        Background="#FF8ADBD6"/>
                 <Button x:Name="BRemove"
                         Content="Удалить"
-                        Click="BRemove_Click" />
+                        Click="BRemove_Click"
+                        Style="{DynamicResource RoundButton}"
+                        Margin="5 0"
+                        Background="#FFDB8A8A"/>
             </StackPanel>
             <ListView x:Name="LVEmployees" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" Height="462" Width="743"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border Width="750" Background="{Binding Color}" BorderBrush="LightGray" BorderThickness="2">
+                        <Border CornerRadius="20" Padding="5 10" Width="230" BorderBrush="Transparent" BorderThickness="2">
+                            <Border.Background>
+                                <SolidColorBrush Color="#FFD9D9D9" Opacity="0.1"/>
+                            </Border.Background>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="150"/>
-                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="121"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="93.387"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="30"/>
                                     <RowDefinition Height="25"/>
-                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="60"/>
                                 </Grid.RowDefinitions>
-                                <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.Column="1">
-                                    <TextBlock Text="{Binding LastName, StringFormat='Фамилия: {0}'}" />
-                                    <TextBlock Text="{Binding FirstName, StringFormat='Имя: {0}'}" />
-                                </StackPanel>
-                                <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding Salary, StringFormat='Зарплата: {0} руб.'}"/>
-                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Binding Post.Name, StringFormat='Должность: {0}'}" Grid.Column="1" Grid.Row="2"></TextBlock>
-
-                                <Image Grid.Column="0" Grid.RowSpan="4" Source="{Binding Image}"></Image>
+                                <TextBlock Style="{StaticResource JostO}" 
+                                           Text="{Binding Post.Name}" 
+                                           Grid.Column="1"
+                                           FontSize="12" 
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Style="{StaticResource Jost}"
+                                           Text="{Binding StrFullName}"
+                                           Grid.Column="1"
+                                           Grid.Row="1" 
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Style="{StaticResource Jost}" 
+                                           Grid.Row="2" Grid.Column="1" 
+                                           Text="{Binding Salary, StringFormat='₽ {0}'}" 
+                                           VerticalAlignment="Bottom"
+                                           Margin="0 0 0 10"/>
+                                <Image Grid.Column="0" RenderOptions.BitmapScalingMode="HighQuality" Grid.RowSpan="3" Source="{Binding Image}" Margin="10,10,10,10"/>
                             </Grid>
                         </Border>
-
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

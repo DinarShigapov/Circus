@@ -11,6 +11,7 @@
         <Style TargetType="Button" x:Key="RoundButton">
             <Setter Property="Height" Value="35"/>
             <Setter Property="Width" Value="100"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="FontFamily" Value="Fonts/#Jost" />
             <Setter Property="FontSize" Value="15"/>
             <Style.Resources>
