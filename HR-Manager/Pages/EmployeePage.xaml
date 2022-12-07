@@ -5,16 +5,113 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HR_Manager.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="EmployeePage">
 
-    <DockPanel Margin="20">
-        <TextBlock DockPanel.Dock="Top" Style="{StaticResource Jost}" FontSize="20" Text="Добавить нового сотрудника"/>
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock/>
-                <TextBox/>
+
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="24"/>
+        </Style>
+    </Page.Resources>
+    
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Style="{StaticResource Jost}" FontSize="22" Text="Добавить нового сотрудника" Grid.RowSpan="3"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal">
+            <UniformGrid HorizontalAlignment="Left" Width="545">
+                <StackPanel Margin="0 0 14 25" Orientation="Vertical">
+                    <TextBlock Style="{StaticResource JostO}" Text="Фамилия"/>
+                    <TextBox BorderThickness="0 0 0 2" Text="{Binding LastName}"/>
+                </StackPanel>
+                <StackPanel  Margin="7 0 7 0" Orientation="Vertical">
+                    <TextBlock Style="{StaticResource JostO}" Text="Имя"/>
+                    <TextBox BorderThickness="0 0 0 2" Text="{Binding FirstName}"/>
+                </StackPanel>
+                <StackPanel Margin="14 0 0 0" Orientation="Vertical">
+                    <TextBlock Style="{StaticResource JostO}" Text="Отчество"/>
+                    <TextBox BorderThickness="0 0 0 2" Text="{Binding Patronymic}"/>
+                </StackPanel>
+                <StackPanel Margin="0 0 14 0" Orientation="Vertical">
+                    <TextBlock Style="{StaticResource JostO}" Text="Email"/>
+                    <TextBox BorderThickness="0 0 0 2" Text="{Binding Address}"/>
+                </StackPanel>
+                <StackPanel Margin="7 0 7 0" Orientation="Vertical">
+                    <TextBlock Style="{StaticResource JostO}" Text="Должность"/>
+                    <ComboBox 
+                        x:Name="CBPosts"
+                        IsEditable="True" 
+                        Height="24" 
+                        BorderThickness="0 0 0 2"
+                        DisplayMemberPath="Name"
+                        SelectedItem="{Binding Post}"/>
+                </StackPanel>
+                <StackPanel Margin="14 0 0 0" Orientation="Vertical">
+                    <TextBlock Style="{StaticResource JostO}" Text="День рождения"/>
+                    <DatePicker BorderThickness="0 0 0 2" Height="24"
+                                SelectedDate="{Binding Birthday}"/>
+                </StackPanel>
+                <StackPanel Margin="0 0 14 0" Orientation="Vertical">
+                    <TextBlock Style="{StaticResource JostO}"  Text="Телефон"/>
+                    <TextBox BorderThickness="0 0 0 2"
+                             Text="{Binding Phone}"/>
+                </StackPanel>
+                <StackPanel Margin="7 0 7 0" Orientation="Vertical">
+                    <TextBlock Style="{StaticResource JostO}" Text="Зарплата"/>
+                    <TextBox
+                        Text="{Binding Salary}"
+                        BorderThickness="0 0 0 2"
+                        MaxLength="7"
+                        PreviewTextInput="Digits_PreviewTextInput"/>
+                </StackPanel>
+                <StackPanel Margin="14 0 0 0" Orientation="Vertical">
+                    <TextBlock Style="{StaticResource JostO}" Text="Пароль"/>
+                    <TextBox
+                        Text="{Binding Password}"
+                        MaxLength="50" 
+                        BorderThickness="0 0 0 2"/>
+                </StackPanel>
+            </UniformGrid>
+            <StackPanel Margin="30 0 0 0">
+                <Ellipse Height="160" Width="160">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding Image}" Stretch="UniformToFill"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Button x:Name="BEditImage"
+                        Style="{DynamicResource RoundButton}" 
+                        Height="30"
+                        Width="100" 
+                        Margin="0 -8 0 0" 
+                        BorderBrush="Transparent"
+                        Content="Добавить"
+                        FontSize="13"
+                        Click="BEditImage_Click">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDFDFDF" Opacity="0.4"/>
+                    </Button.Background>
+                </Button>
             </StackPanel>
         </StackPanel>
-    </DockPanel>
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="2">
+            <Button x:Name="BSave"
+                    Style="{DynamicResource RoundButton}" 
+                    BorderBrush="Transparent" 
+                    Background="#FFB2DB8A"
+                    Content="Сохранить"
+                    Click="BSave_Click"/>
+            <Button x:Name="BCancel"
+                    Style="{DynamicResource RoundButton}" 
+                    BorderBrush="Transparent" 
+                    Background="#FFDB8A8A"
+                    Content="Отменить"
+                    Margin="10 0"
+                    Click="BCancel_Click"/>
+        </StackPanel>
+    </Grid>
 </Page>

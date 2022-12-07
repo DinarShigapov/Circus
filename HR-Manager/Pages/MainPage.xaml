@@ -27,8 +27,8 @@
         <Image HorizontalAlignment="Left" RenderOptions.BitmapScalingMode="HighQuality" Height="75" Margin="14" Source="/Resources/logoCircus.png" />
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
             <StackPanel Margin="0 -10 10 0" Orientation="Vertical" VerticalAlignment="Center">
-                <TextBlock x:Name="TFullName" FontSize="20" HorizontalAlignment="Right"/>
-                <TextBlock x:Name="TPost" FontSize="13" Margin="0 -5" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="TFullName" Style="{StaticResource JostO}" FontSize="20" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="TPost" Style="{StaticResource JostO}" FontSize="13" Margin="0 -5" HorizontalAlignment="Right"/>
             </StackPanel>
             <Image Margin="0 0 20 0" RenderOptions.BitmapScalingMode="HighQuality" Width="50" Opacity="0.5" Source="/Resources/AuthUser.png" />
         </StackPanel>

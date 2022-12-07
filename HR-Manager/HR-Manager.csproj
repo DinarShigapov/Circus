@@ -143,6 +143,9 @@
     <Compile Include="Model\SchedulePerformance.cs">
       <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\TicketSale.cs">
       <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
@@ -175,13 +178,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Fonts\Jost-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <EntityDeploy Include="Model\CircusDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CircusDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Resource Include="Fonts\Jost-Regular.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <None Include="Model\CircusDB.edmx.diagram">
       <DependentUpon>CircusDB.edmx</DependentUpon>
     </None>
@@ -195,6 +198,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\AuthUser.png" />
+    <Resource Include="Resources\user.png" />
+    <Resource Include="Resources\logoCircus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
     <Content Include="Model\CircusDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CircusDB.edmx</DependentUpon>
@@ -206,14 +218,5 @@
       <LastGenOutput>CircusDB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\AuthUser.png" />
-    <Resource Include="Resources\user.png" />
-    <Resource Include="Resources\logoCircus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,9 +27,9 @@ namespace Circus.Model
         public string Patronymic { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        public Nullable<int> PostId { get; set; }
-        public Nullable<System.DateTime> Birthday { get; set; }
-        public Nullable<decimal> Salary { get; set; }
+        public int PostId { get; set; }
+        public System.DateTime Birthday { get; set; }
+        public decimal Salary { get; set; }
         public byte[] Image { get; set; }
         public string Password { get; set; }
     

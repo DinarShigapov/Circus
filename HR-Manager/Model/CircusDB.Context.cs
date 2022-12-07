@@ -13,10 +13,10 @@ namespace HR_Manager.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CircusEntities : DbContext
+    public partial class Shigapov326Entities1 : DbContext
     {
-        public CircusEntities()
-            : base("name=CircusEntities")
+        public Shigapov326Entities1()
+            : base("name=Shigapov326Entities1")
         {
         }
     
@@ -36,6 +36,7 @@ namespace HR_Manager.Model
         public virtual DbSet<Performance> Performance { get; set; }
         public virtual DbSet<Post> Post { get; set; }
         public virtual DbSet<SchedulePerformance> SchedulePerformance { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TicketSale> TicketSale { get; set; }
     }
 }

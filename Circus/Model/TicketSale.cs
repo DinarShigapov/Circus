@@ -15,8 +15,8 @@ namespace Circus.Model
     public partial class TicketSale
     {
         public int Id { get; set; }
-        public Nullable<int> PerformanceId { get; set; }
-        public Nullable<int> ClientId { get; set; }
+        public int PerformanceId { get; set; }
+        public int ClientId { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Performance Performance { get; set; }

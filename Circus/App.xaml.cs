@@ -14,7 +14,7 @@ namespace Circus
     /// </summary>
     public partial class App : Application
     {
-        public static Shigapov326Entities2 DB = new Shigapov326Entities2();
+        public static Shigapov326Entities1 DB = new Shigapov326Entities1();
         public static Employee LoggedEmployee;
     }
 }
