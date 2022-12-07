@@ -62,11 +62,11 @@ namespace HR_Manager.Pages
         {
             if (string.IsNullOrWhiteSpace(TBSearch.Text))
             {
-                LVEmployees.ItemsSource = App.DB.Employee.ToList();
+                LVEmployees.ItemsSource = App.DB.Employee.Where(x => x.Post.Id != 4).ToList();
             }
             else
             {
-                LVEmployees.ItemsSource = App.DB.Employee.Where(a => a.Salary.ToString().Contains(TBSearch.Text.ToLower())).ToList();
+                LVEmployees.ItemsSource = App.DB.Employee.Where(a => a.Salary.ToString().Contains(TBSearch.Text.ToLower())).Where(x => x.Post.Id != 4).ToList();
             }
 
         }
