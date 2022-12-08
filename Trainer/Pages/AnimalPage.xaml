@@ -9,37 +9,90 @@
       Title="AnimalPage">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="93*"/>
+                <RowDefinition Height="14*"/>
+            </Grid.RowDefinitions>
 
-        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Width="300" Orientation="Vertical">
-            <TextBlock Text="Кличка"/>
-            <TextBox Text="{Binding Name}"/>
-            <TextBlock Text="Возраст"/>
-            <TextBox Text="{Binding Age}"/>
-            <TextBlock Text="Вид"/>
-            <ComboBox x:Name="CBTypes" 
-                      SelectedItem="{Binding AnimalType}"
-                      DisplayMemberPath="Name"/>
-            <TextBlock Text="Клетка"/>
-            <ComboBox x:Name="CBCages" 
-                      SelectedItem="{Binding Cage}"
-                      DisplayMemberPath="Name"/>
-            <Button x:Name="BSave"
-                Content="Сохранить"
-                Click="BSave_Click"/>
-            <Button x:Name="BCancel"
-                Content="Отмена"
-                Click="BCancel_Click"/>
-        </StackPanel>
-        <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <Image Height="300"
-                   Source="{Binding Image}" />
-            <Button x:Name="BEditImage"
-                    Content="Изменить фото"
-                    Click="BEditImage_Click" />
-        </StackPanel>
+            <TextBlock Grid.Row="0" Style="{StaticResource Jost}" FontSize="22" Text="Животное" Grid.RowSpan="3"/>
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal">
+                <UniformGrid HorizontalAlignment="Left" Width="510">
+                    <StackPanel Margin="0 0 14 25" Orientation="Vertical">
+                        <TextBlock Style="{StaticResource JostO}" Text="Кличка"/>
+                        <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding Name}"/>
+                    </StackPanel>
+                    <StackPanel  Margin="7 0 7 0" Orientation="Vertical">
+                        <TextBlock Style="{StaticResource JostO}" Text="Возраст"/>
+                        <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding Age}"/>
+                    </StackPanel>
+                    <StackPanel Margin="7 0 7 0" Orientation="Vertical">
+                        <TextBlock Style="{StaticResource JostO}" Text="Вид"/>
+                        <ComboBox 
+                        x:Name="CBType"
+                        IsEditable="True" 
+                        Height="24" 
+                        BorderThickness="0 0 0 2"
+                        DisplayMemberPath="Name"
+                        SelectedItem="{Binding AnimalType}"
+                        FontSize="15"/>
+                    </StackPanel>
+                    <StackPanel Margin="7 0 7 0" Orientation="Vertical">
+                        <TextBlock Style="{StaticResource JostO}" Text="Вид"/>
+                        <ComboBox 
+                        x:Name="CBCage"
+                        IsEditable="True" 
+                        Height="24" 
+                        BorderThickness="0 0 0 2"
+                        DisplayMemberPath="Name"
+                        SelectedItem="{Binding Cage}"
+                        FontSize="15"/>
+                    </StackPanel>
+                </UniformGrid>
+                <StackPanel Margin="50 0 0 0">
+                    <Grid>
+                        <Ellipse Height="170" Width="170">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{Binding Image}" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Ellipse Height="170" Width="170">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="Black" Opacity="0.03"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                    <Button x:Name="BEditImage"
+                        Style="{DynamicResource RoundButton}" 
+                        Height="30"
+                        Width="100" 
+                        Margin="0 -8 0 0" 
+                        BorderBrush="Transparent"
+                        Content="Добавить"
+                        FontSize="13"
+                        Click="BEditImage_Click">
+                        <Button.Background>
+                            <SolidColorBrush Color="#FFDFDFDF" Opacity="0.4"/>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="2">
+                <Button x:Name="BSave"
+                    Style="{DynamicResource RoundButton}" 
+                    BorderBrush="Transparent" 
+                    Background="#FFB2DB8A"
+                    Content="Сохранить"
+                    Click="BSave_Click"/>
+                <Button x:Name="BCancel"
+                    Style="{DynamicResource RoundButton}" 
+                    BorderBrush="Transparent" 
+                    Background="#FFDB8A8A"
+                    Content="Отменить"
+                    Margin="10 0"
+                    Click="BCancel_Click"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

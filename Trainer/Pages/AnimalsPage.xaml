@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Trainer.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AnimalsPage">
+      Title="AnimalsPage"
+      Loaded="Page_Loaded">
 
     <Page.Resources>
 
@@ -41,29 +42,66 @@
             <StackPanel Margin="10" DockPanel.Dock="Top" Orientation="Horizontal">
                 <TextBlock Style="{StaticResource infoTxt}" VerticalAlignment="Center" Text="Поиск"/>
                 <TextBox Margin="5 0" x:Name="TBSearch" Width="200" TextChanged="TBSearch_TextChanged"/>
-                <Button x:Name="BAdd" Content="Добавить" Click="BAdd_Click"/>
-                <Button x:Name="BEdit"  Content="Изменить" Click="BEdit_Click"/>
-                <Button x:Name="BRemove" Content="Удалить" Click="BRemove_Click"/>
+                <Button x:Name="BAdd"
+                        Content="Добавить"
+                        Click="BAdd_Click" 
+                        Style="{DynamicResource RoundButton}"
+                        Margin="10 0 5 0"
+                        Background="#FFB2DB8A"/>
+                <Button x:Name="BEdit"
+                        Content="Изменить"
+                        Click="BEdit_Click" 
+                        Style="{DynamicResource RoundButton}"
+                        Margin="5 0"
+                        Background="#FF8ADBD6"/>
+                <Button x:Name="BRemove"
+                        Content="Удалить"
+                        Click="BRemove_Click"
+                        Style="{DynamicResource RoundButton}"
+                        Margin="5 0"
+                        Background="#FFDB8A8A"/>
             </StackPanel>
-            <ListView BorderThickness="0"  x:Name="LVAnimals">
+            <ListView BorderThickness="0"  x:Name="LVAnimals" d:ItemsSource="{d:SampleData ItemCount=5}">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel  Orientation="Horizontal" Width="744" HorizontalAlignment="Left"/>
+                        <WrapPanel Orientation="Horizontal" Height="462" Width="800"/>
                     </ItemsPanelTemplate>
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border Padding="10" Width="300" CornerRadius="20"  BorderBrush="{DynamicResource BttColorMP}" BorderThickness="1">
-                            <StackPanel Orientation="Horizontal">
-                                <StackPanel  VerticalAlignment="Center">
-                                    <Image Width="100" Height="100" VerticalAlignment="Center" Source="{Binding Image}"/>
-                                </StackPanel>
-                                <StackPanel Margin="20 0">
-                                    <TextBlock Style="{StaticResource infoTxt}" Text="{Binding Name, StringFormat='Кличка: {0}'}"/>
-                                    <TextBlock Style="{StaticResource infoTxt}" Text="{Binding Age, StringFormat='Возраст: {0}'}"/>
-                                    <TextBlock Style="{StaticResource infoTxt}" Text="{Binding AnimalType.Name, StringFormat='Вид: {0}'}"/>
-                                </StackPanel>
-                            </StackPanel>
+                        <Border CornerRadius="20" Padding="5 10" Width="255" BorderBrush="Transparent" BorderThickness="2">
+                            <Border.Background>
+                                <SolidColorBrush Color="#FFD9D9D9" Opacity="0.2"/>
+                            </Border.Background>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="121"/>
+                                    <ColumnDefinition Width="Auto" MinWidth="93.387"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="60"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Style="{StaticResource JostO}" 
+                                           Text="{Binding AnimalType.Name}" 
+                                           Grid.Column="1"
+                                           FontSize="13" 
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Style="{StaticResource Jost}"
+                                           Text="{Binding Name}"
+                                           Grid.Column="1"
+                                           Grid.Row="1" 
+                                           VerticalAlignment="Center"
+                                           FontSize="14"/>
+                                <TextBlock Style="{StaticResource Jost}" 
+                                           Grid.Row="2" Grid.Column="1" 
+                                           Text="{Binding Age, StringFormat='Возраст {0}'}" 
+                                           VerticalAlignment="Bottom"
+                                           Margin="0 0 0 10"
+                                           FontSize="14"/>
+                                <Image Grid.Column="0" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" Grid.RowSpan="3" Source="{Binding Image}" Margin="10"/>
+                            </Grid>
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>

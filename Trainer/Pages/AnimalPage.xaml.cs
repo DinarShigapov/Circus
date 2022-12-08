@@ -28,8 +28,8 @@ namespace Trainer.Pages
         public AnimalPage(Animal animal)
         {
             InitializeComponent();
-            CBCages.ItemsSource = App.DB.Cage.ToList();
-            CBTypes.ItemsSource = App.DB.AnimalType.ToList();
+            CBCage.ItemsSource = App.DB.Cage.ToList();
+            CBType.ItemsSource = App.DB.AnimalType.ToList();
             contextAnimal = animal;
             DataContext = animal;
         }

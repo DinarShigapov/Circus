@@ -1,0 +1,35 @@
+﻿<Page x:Class="WH_Manager.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WH_Manager.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Frame x:Name="MenuFrame"
+               NavigationUIVisibility="Hidden"
+               Grid.Column="1"
+               Grid.Row="1" />
+        <Rectangle Grid.ColumnSpan="2" Fill="{DynamicResource MainColorBgd}">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#DD9883" BlurRadius="0"  Direction="270" Opacity="0.4" RenderingBias="Quality" ShadowDepth="3"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Image HorizontalAlignment="Left" RenderOptions.BitmapScalingMode="HighQuality" Height="75" Margin="14" Source="/Resources/logoCircus.png" />
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+            <StackPanel Margin="0 -10 10 0" Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock x:Name="TFullName" Style="{StaticResource JostO}" FontSize="20" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="TPost" Style="{StaticResource JostO}" FontSize="15" Margin="0 -5" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <Image Margin="0 0 20 0" RenderOptions.BitmapScalingMode="HighQuality" Width="50" Opacity="0.5" Source="/Resources/AuthUser.png" />
+        </StackPanel>
+    </Grid>
+</Page>

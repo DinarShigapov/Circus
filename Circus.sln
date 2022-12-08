@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31205.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circus", "Circus\Circus.csproj", "{1B88D845-F608-4F31-A97A-BA4E0DB3214D}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Director", "Director\Director.csproj", "{24A58E9D-2495-4687-A1B0-8E31B1BABDC4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trainer", "Trainer\Trainer.csproj", "{F2E696F4-9826-445B-A0A9-ACC1BE1096F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WH-Manager", "WH-Manager\WH-Manager.csproj", "{F4324713-7D9F-477A-B3B4-A0FC956B029F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F2E696F4-9826-445B-A0A9-ACC1BE1096F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2E696F4-9826-445B-A0A9-ACC1BE1096F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2E696F4-9826-445B-A0A9-ACC1BE1096F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4324713-7D9F-477A-B3B4-A0FC956B029F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4324713-7D9F-477A-B3B4-A0FC956B029F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4324713-7D9F-477A-B3B4-A0FC956B029F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4324713-7D9F-477A-B3B4-A0FC956B029F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

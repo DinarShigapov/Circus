@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2E696F4-9826-445B-A0A9-ACC1BE1096F3}</ProjectGuid>
+    <ProjectGuid>{F4324713-7D9F-477A-B3B4-A0FC956B029F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Trainer</RootNamespace>
-    <AssemblyName>Trainer</AssemblyName>
+    <RootNamespace>WH_Manager</RootNamespace>
+    <AssemblyName>WH-Manager</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -76,11 +76,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AnimalPage.xaml">
+    <Page Include="Pages\ItemEmployeePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\AnimalsPage.xaml">
+    <Page Include="Pages\ItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ItemsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,11 +146,14 @@
     <Compile Include="Model\TicketSale.cs">
       <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AnimalPage.xaml.cs">
-      <DependentUpon>AnimalPage.xaml</DependentUpon>
+    <Compile Include="Pages\ItemEmployeePage.xaml.cs">
+      <DependentUpon>ItemEmployeePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AnimalsPage.xaml.cs">
-      <DependentUpon>AnimalsPage.xaml</DependentUpon>
+    <Compile Include="Pages\ItemPage.xaml.cs">
+      <DependentUpon>ItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ItemsPage.xaml.cs">
+      <DependentUpon>ItemsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -188,8 +195,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Content Include="Model\CircusDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CircusDB.Context.cs</LastGenOutput>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\CircusDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+      <LastGenOutput>CircusDB.cs</LastGenOutput>
+    </Content>
     <Resource Include="Resources\user.png" />
     <Resource Include="Resources\logoCircus.png" />
     <Resource Include="Resources\AuthUser.png" />
@@ -197,17 +213,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model\CircusDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CircusDB.edmx</DependentUpon>
-      <LastGenOutput>CircusDB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\CircusDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CircusDB.edmx</DependentUpon>
-      <LastGenOutput>CircusDB.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

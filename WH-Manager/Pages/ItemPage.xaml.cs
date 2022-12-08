@@ -1,5 +1,4 @@
-﻿using Circus.Model;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,43 +14,34 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WH_Manager.Model;
 
-namespace Circus.Pages
+namespace WH_Manager.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AnimalPage.xaml
+    /// Логика взаимодействия для ItemPage.xaml
     /// </summary>
-    public partial class AnimalPage : Page
+    public partial class ItemPage : Page
     {
-        Animal contextAnimal;
-
-        public AnimalPage(Animal animal)
+        Item contextItem;
+        public ItemPage(Item item)
         {
             InitializeComponent();
-            CBCages.ItemsSource = App.DB.Cage.ToList();
-            CBTypes.ItemsSource = App.DB.AnimalType.ToList();
-            contextAnimal = animal;
-            DataContext = animal;
+            CBType.ItemsSource = App.DB.ItemType.ToList();
+            contextItem = item;
+            DataContext = contextItem;
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)
         {
             string errorMessage = "";
-            if (string.IsNullOrWhiteSpace(contextAnimal.Name) == true)
+            if (string.IsNullOrWhiteSpace(contextItem.Name) == true)
             {
-                errorMessage += "Введите имя\n";
+                errorMessage += "Введите название\n";
             }
-            if (contextAnimal.Age == 0 || contextAnimal.Age < 0 || int.TryParse(contextAnimal.Age.ToString(), out var numberStyles) == false)
+            if (contextItem.ItemType == null)
             {
-                errorMessage += "Введите корректный возраст\n";
-            }
-            if (contextAnimal.Cage == null)
-            {
-                errorMessage += "Введите клетку\n";
-            }
-            if (contextAnimal.AnimalType == null)
-            {
-                errorMessage += "Введите вид\n";
+                errorMessage += "Введите тип\n";
             }
             if (string.IsNullOrWhiteSpace(errorMessage) == false)
             {
@@ -59,8 +49,8 @@ namespace Circus.Pages
                 return;
             }
 
-            if (contextAnimal.Id == 0)
-                App.DB.Animal.Add(contextAnimal);
+            if (contextItem.id == 0)
+                App.DB.Item.Add(contextItem);
             App.DB.SaveChanges();
             NavigationService.GoBack();
 
@@ -71,9 +61,9 @@ namespace Circus.Pages
             var dialog = new OpenFileDialog();
             if (dialog.ShowDialog().GetValueOrDefault())
             {
-                contextAnimal.Image = File.ReadAllBytes(dialog.FileName);
+                contextItem.Image = File.ReadAllBytes(dialog.FileName);
                 DataContext = null;
-                DataContext = contextAnimal;
+                DataContext = contextItem;
             }
         }
 
@@ -81,5 +71,7 @@ namespace Circus.Pages
         {
             NavigationService.GoBack();
         }
+
+
     }
 }
