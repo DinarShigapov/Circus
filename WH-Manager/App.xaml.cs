@@ -14,7 +14,7 @@ namespace WH_Manager
     /// </summary>
     public partial class App : Application
     {
-        public static Shigapov326Entities DB = new Shigapov326Entities();
+        public static CircusEntities DB = new CircusEntities();
         public static Employee LoggedEmployee;
     }
 }

@@ -4,6 +4,68 @@
              xmlns:local="clr-namespace:Cashier"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="MainColorBgd" Color="#F1C884"/>
+        <SolidColorBrush x:Key="BttColorMP" Color="#DCB77A"/>
+
+
+        <Style TargetType="Button" x:Key="RoundButton">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="FontFamily" Value="Fonts/#Jost" />
+            <Setter Property="FontSize" Value="15"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style x:Key="JostO" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Fonts/#Jost" />
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="0 4"/>
+        </Style>
+        <Style x:Key="Jost" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Fonts/#Jost" />
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <SolidColorBrush Color="Black"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="VerMenuBtt">
+            <Setter Property="Background" Value="{DynamicResource BttColorMP}"/>
+            <Setter Property="Foreground" Value="#1E1E1E"/>
+            <Setter Property="Margin" Value="0 3"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Width" Value="104"/>
+            <Setter Property="FontFamily" Value="Bahnschrift SemiLight"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="18 0 0 18"
+                        Padding="6 10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter TargetName="border" Property="Background" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,8 +76,80 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TicketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Animal.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AnimalType.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Cage.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CircusDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CircusDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CircusDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CircusDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Employee.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Item.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ItemEmployee.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ItemType.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Performance.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Post.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SchedulePerformance.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TicketSale.cs">
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TicketPage.xaml.cs">
+      <DependentUpon>TicketPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +167,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Fonts\Jost-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <EntityDeploy Include="Model\CircusDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CircusDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\CircusDB.edmx.diagram">
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +185,31 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AuthUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logoCircus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\CircusDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CircusDB.Context.cs</LastGenOutput>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\CircusDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+      <LastGenOutput>CircusDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

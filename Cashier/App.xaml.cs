@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Cashier.Model;
 
 namespace Cashier
 {
@@ -13,5 +14,7 @@ namespace Cashier
     /// </summary>
     public partial class App : Application
     {
+        public static CircusEntities DB = new CircusEntities();
+        public static Employee LoggedEmployee;
     }
 }

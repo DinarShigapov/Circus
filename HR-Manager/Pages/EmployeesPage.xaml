@@ -58,7 +58,7 @@
                         Margin="5 0"
                         Background="#FFDB8A8A"/>
             </StackPanel>
-            <ListView x:Name="LVEmployees" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView x:Name="LVEmployees">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel Orientation="Horizontal" Height="462" Width="800"/>

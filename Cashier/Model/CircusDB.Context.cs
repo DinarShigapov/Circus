@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WH_Manager.Model
+namespace Cashier.Model
 {
     using System;
     using System.Data.Entity;

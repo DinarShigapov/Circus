@@ -14,7 +14,7 @@ namespace HR_Manager
     /// </summary>
     public partial class App : Application
     {
-        public static CircusDBEntities DB = new CircusDBEntities();
+        public static CircusEntities DB = new CircusEntities();
         public static Employee LoggedEmployee;
     }
 }
