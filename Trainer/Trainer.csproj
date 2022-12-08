@@ -139,9 +139,6 @@
     <Compile Include="Model\SchedulePerformance.cs">
       <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\sysdiagrams.cs">
-      <DependentUpon>CircusDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\TicketSale.cs">
       <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
@@ -194,22 +191,24 @@
     <Folder Include="Fonts\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\CircusDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CircusDB.Context.cs</LastGenOutput>
-      <DependentUpon>CircusDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="Model\CircusDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CircusDB.edmx</DependentUpon>
-      <LastGenOutput>CircusDB.cs</LastGenOutput>
-    </Content>
     <Resource Include="Resources\user.png" />
     <Resource Include="Resources\logoCircus.png" />
     <Resource Include="Resources\AuthUser.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\CircusDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+      <LastGenOutput>CircusDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\CircusDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+      <LastGenOutput>CircusDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
