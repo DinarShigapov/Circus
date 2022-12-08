@@ -17,23 +17,30 @@
 
         <TextBlock Grid.Row="0" Style="{StaticResource Jost}" FontSize="22" Text="Предмет" Grid.RowSpan="3"/>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal">
-            <UniformGrid HorizontalAlignment="Left" Width="510">
-                <StackPanel Margin="0 0 14 25" Orientation="Vertical">
-                    <TextBlock Style="{StaticResource JostO}" Text="Название"/>
-                    <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding Name}"/>
-                </StackPanel>
-                <StackPanel Margin="7 0 7 0" Orientation="Vertical">
-                    <TextBlock Style="{StaticResource JostO}" Text="Тип"/>
-                    <ComboBox 
+            <StackPanel>
+                <UniformGrid HorizontalAlignment="Left" Width="510">
+                    <StackPanel Margin="0 0 14 25" Orientation="Vertical">
+                        <TextBlock Style="{StaticResource JostO}" Text="Название"/>
+                        <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding Name}"/>
+                    </StackPanel>
+                    <StackPanel Margin="7 0 7 0" Orientation="Vertical">
+                        <TextBlock Style="{StaticResource JostO}" Text="Тип"/>
+                        <ComboBox 
                         x:Name="CBType"
                         IsEditable="True" 
                         Height="24" 
-                        BorderThickness="0 0 0 2"
+                        BorderThickness="0 0 0 1"
                         DisplayMemberPath="Name"
                         SelectedItem="{Binding ItemType}"
                         FontSize="15"/>
+                    </StackPanel>
+                </UniformGrid>
+                <StackPanel x:Name="SPItemEmployee" Visibility="Collapsed" HorizontalAlignment="Left" Width="150">
+                    <TextBlock Text="Сотрудник" Style="{DynamicResource JostO}"/>
+                    <ComboBox Margin="0 10" IsEditable="True" BorderThickness="0 0 0 1"/>
+                    <Button Style="{StaticResource RoundButton}" Content="Выдать"/>
                 </StackPanel>
-            </UniformGrid>
+            </StackPanel>
             <StackPanel Margin="50 0 0 0">
                 <Grid>
                     <Ellipse Height="170" Width="170">

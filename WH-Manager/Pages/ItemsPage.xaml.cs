@@ -78,15 +78,5 @@ namespace WH_Manager.Pages
             Refresh();
         }
 
-        private void BIssue_Click(object sender, RoutedEventArgs e)
-        {
-            var selectedItem = LVItems.SelectedItem as Item;
-            if (selectedItem == null)
-            {
-                MessageBox.Show("Выберите предмет");
-                return;
-            }
-            NavigationService.Navigate(new ItemEmployeePage(selectedItem));
-        }
     }
 }

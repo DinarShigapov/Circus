@@ -30,6 +30,9 @@ namespace WH_Manager.Pages
             CBType.ItemsSource = App.DB.ItemType.ToList();
             contextItem = item;
             DataContext = contextItem;
+            if(contextItem.id != 0)
+                SPItemEmployee.Visibility = Visibility.Visible;
+
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)

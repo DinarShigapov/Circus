@@ -59,12 +59,6 @@
                         Style="{DynamicResource RoundButton}"
                         Margin="5 0"
                         Background="#FFDB8A8A"/>
-                <Button x:Name="BIssue"
-                        Content="Выдать"
-                        Click="BIssue_Click"
-                        Style="{DynamicResource RoundButton}"
-                        Margin="5 0"
-                        Background="#FFDBAF8A"/>
             </StackPanel>
             <ListView BorderThickness="0" x:Name="LVItems" d:ItemsSource="{d:SampleData ItemCount=5}">
                 <ListView.ItemsPanel>
