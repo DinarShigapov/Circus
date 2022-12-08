@@ -22,7 +22,11 @@ namespace Cashier.Pages
     {
         public MainPage()
         {
+
             InitializeComponent();
+            var user = App.LoggedEmployee;
+            TFullName.Text = $"{user.LastName} {user.FirstName.ToCharArray()[0]}. {user.Patronymic.ToCharArray()[0]}.";
+            TPost.Text = user.Post.Name;
             MenuFrame.Navigate(new TicketPage());
         }
     }

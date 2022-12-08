@@ -10,14 +10,14 @@
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="93*"/>
-            <RowDefinition Height="14*"/>
+            <RowDefinition Height="33"/>
+            <RowDefinition Height="232"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Style="{StaticResource Jost}" FontSize="22" Text="Продажа билетов" Grid.RowSpan="3"/>
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal">
-            <UniformGrid HorizontalAlignment="Left" Width="545">
+        <TextBlock Grid.Row="0" Style="{StaticResource Jost}" FontSize="22" Text="Продажа билетов" />
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" Height="230">
+            <UniformGrid Margin="0 " HorizontalAlignment="Left" VerticalAlignment="Center" Width="545">
                 <StackPanel Margin="0 0 14 25" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Фамилия"/>
                     <TextBox x:Name="TLastName" FontSize="15" BorderThickness="0 0 0 2"/>
@@ -52,7 +52,7 @@
                 </StackPanel>
             </UniformGrid>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="2">
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Grid.Row="2" Margin="660,0,0,0" Width="100">
             <Button x:Name="BSave"
                     Style="{DynamicResource RoundButton}" 
                     BorderBrush="Transparent" 

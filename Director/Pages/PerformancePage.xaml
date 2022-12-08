@@ -1,0 +1,76 @@
+﻿<Page x:Class="Director.Pages.PerformancePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Director.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PerformancePage">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Width="200">
+            <TextBlock Text="Название" Style="{StaticResource JostO}"/>
+            <TextBox Text="{Binding Name}"
+                     BorderThickness="0 0 0 1"/>
+            <TextBlock Text="Дата" Margin="0 10 0 0" Style="{StaticResource JostO}"/>
+            <DatePicker x:Name="DPDate" BorderThickness="0 0 0 1" Margin="0 0 0 10"/>
+            <TextBlock Text="Время" Style="{StaticResource JostO}" />
+            <TextBox x:Name="TBTime" BorderThickness="0 0 0 1"/>
+            <Button x:Name="BSave"
+                    Content="Сохранить"
+                    Click="BSave_Click"
+                    Style="{StaticResource RoundButton}"
+                    Width="110"
+                    Height="30"
+                    Margin="0 10 0 0"
+                    Background="#FFA3DB8A"/>
+        </StackPanel>
+        <DockPanel Grid.Column="1">
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Top">
+                <TextBlock Text="Длительность номера" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="TBDuration"
+                         Width="100" 
+                         BorderThickness="0 0 0 1"
+                         VerticalAlignment="Bottom"/>
+                <TextBlock Text="Актер" VerticalAlignment="Bottom"/>
+                <ComboBox x:Name="CBEmployees"
+                          DisplayMemberPath="Name"
+                          Width="100" 
+                          SelectedItem="{Binding LastName}"
+                          IsEditable="True"
+                          VerticalAlignment="Bottom"
+                          BorderThickness="0 0 0 1"/>
+                <TextBlock Text="Животное" VerticalAlignment="Bottom" />
+                <ComboBox x:Name="CBAnimals"
+                          DisplayMemberPath="Name"
+                          Width="100" 
+                          VerticalAlignment="Bottom"
+                          BorderThickness="0 0 0 1"
+                          IsEditable="True"/>
+                <Button x:Name="BAddTimeTable"
+                        Content="Добавить"
+                        Click="BAddTimeTable_Click"
+                        Style="{StaticResource RoundButton}" 
+                        Width="49"
+                        FontSize="10"
+                        Background="AliceBlue" Height="22"/>
+            </StackPanel>
+            <DataGrid x:Name="DGTimeTable" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Время"
+                                        Binding="{Binding Time}" />
+                    <DataGridTextColumn Header="Животное"
+                                        Binding="{Binding Animal.Name}" />
+                    <DataGridTextColumn Header="Актер"
+                                        Binding="{Binding Employee.Name}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</Page>

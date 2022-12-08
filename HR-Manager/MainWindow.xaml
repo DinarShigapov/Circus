@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HR_Manager"
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="CIRCUS" 
         Height="500" 
         Width="850" 
         WindowStyle="ToolWindow" 
         ResizeMode="NoResize"
+        Icon="/Resources/logoCircus.png"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>

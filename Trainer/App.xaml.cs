@@ -14,7 +14,7 @@ namespace Trainer
     /// </summary>
     public partial class App : Application
     {
-        public static Shigapov326Entities DB = new Shigapov326Entities();
+        public static Shigapov326CircusEntities DB = new Shigapov326CircusEntities();
         public static Employee LoggedEmployee;
     }
 }

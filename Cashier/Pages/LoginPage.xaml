@@ -9,15 +9,34 @@
       Title="LoginPage">
 
     <Grid>
-        <StackPanel Orientation="Vertical" 
-                    VerticalAlignment="Center" 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition Width="201*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize="20" FontFamily="Bahnschrift SemiLight" Margin="0 0 0 10"/>
-            <TextBlock FontFamily="Bahnschrift SemiLight" Text="Телефон"/>
-            <TextBox Margin="0 0 0 10" x:Name="TBPhone"/>
-            <TextBlock FontFamily="Bahnschrift SemiLight" Text="Пароль"/>
-            <PasswordBox Margin="0 0 0 10" x:Name="PBPassword"/>
-            <Button x:Name="BLogin" Content="Войти" Width="200" Click="BLogin_Click"/>
+            <Image Source="/Resources/logoCircus.png" Width="200" RenderOptions.BitmapScalingMode="HighQuality"/>
+            <TextBlock HorizontalAlignment="Center" FontSize="40" Style="{StaticResource Jost}" Text="CIRCUS"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical"
+                    Width="200"
+                    VerticalAlignment="Center"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Авторизация" Style="{DynamicResource Jost}"
+                       HorizontalAlignment="Center" 
+                       FontSize="25" 
+                       Margin="0 0 0 10"/>
+            <TextBlock Style="{DynamicResource JostO}"  Text="Телефон"/>
+            <TextBox Margin="0 0 0 10" x:Name="TBPhone" BorderThickness="0 0 0 2"/>
+            <TextBlock Style="{DynamicResource JostO}"  Text="Пароль"/>
+            <PasswordBox Margin="0 0 0 10" x:Name="PBPassword" BorderThickness="0 0 0 2"/>
+            <Button x:Name="BLogin" 
+                    Style="{DynamicResource RoundButton}" 
+                    Content="Войти" 
+                    Width="100" Height="30" 
+                    Click="BLogin_Click"
+                    Background="#FFDBA48A"/>
         </StackPanel>
     </Grid>
 </Page>

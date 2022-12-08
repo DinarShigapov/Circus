@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Shigapov326Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище Shigapov326CircusModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Animal">
           <Key>
             <PropertyRef Name="Id" />
@@ -97,6 +97,16 @@
           <Property Name="Time" Type="time" Precision="7" Nullable="false" />
           <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="AnimalId" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="TicketSale">
           <Key>
@@ -231,7 +241,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище Shigapov326ModelContainer">
+        <EntityContainer Name="Хранилище Shigapov326CircusModelContainer">
           <EntitySet Name="Animal" EntityType="Self.Animal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnimalType" EntityType="Self.AnimalType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cage" EntityType="Self.Cage" Schema="dbo" store:Type="Tables" />
@@ -242,6 +252,7 @@
           <EntitySet Name="Performance" EntityType="Self.Performance" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SchedulePerformance" EntityType="Self.SchedulePerformance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TicketSale" EntityType="Self.TicketSale" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Animal_AnimalType" Association="Self.FK_Animal_AnimalType">
             <End Role="AnimalType" EntitySet="AnimalType" />
@@ -288,7 +299,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Shigapov326Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Shigapov326CircusModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Animal">
           <Key>
             <PropertyRef Name="Id" />
@@ -400,6 +411,16 @@
           <NavigationProperty Name="Animal" Relationship="Self.FK_SchedulePerformance_Animal" FromRole="SchedulePerformance" ToRole="Animal" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_SchedulePerformance_Employee" FromRole="SchedulePerformance" ToRole="Employee" />
           <NavigationProperty Name="Performance" Relationship="Self.FK_SchedulePerformance_Performance" FromRole="SchedulePerformance" ToRole="Performance" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TicketSale">
           <Key>
@@ -535,7 +556,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Shigapov326Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Shigapov326CircusEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Animal" EntityType="Self.Animal" />
           <EntitySet Name="AnimalType" EntityType="Self.AnimalType" />
           <EntitySet Name="Cage" EntityType="Self.Cage" />
@@ -546,6 +567,7 @@
           <EntitySet Name="Performance" EntityType="Self.Performance" />
           <EntitySet Name="Post" EntityType="Self.Post" />
           <EntitySet Name="SchedulePerformance" EntityType="Self.SchedulePerformance" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TicketSale" EntityType="Self.TicketSale" />
           <AssociationSet Name="FK_Animal_AnimalType" Association="Self.FK_Animal_AnimalType">
             <End Role="AnimalType" EntitySet="AnimalType" />
@@ -593,9 +615,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Shigapov326ModelContainer" CdmEntityContainer="Shigapov326Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Shigapov326CircusModelContainer" CdmEntityContainer="Shigapov326CircusEntities">
           <EntitySetMapping Name="Animal">
-            <EntityTypeMapping TypeName="Shigapov326Model.Animal">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.Animal">
               <MappingFragment StoreEntitySet="Animal">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -607,7 +629,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AnimalType">
-            <EntityTypeMapping TypeName="Shigapov326Model.AnimalType">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.AnimalType">
               <MappingFragment StoreEntitySet="AnimalType">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -615,7 +637,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cage">
-            <EntityTypeMapping TypeName="Shigapov326Model.Cage">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.Cage">
               <MappingFragment StoreEntitySet="Cage">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -624,7 +646,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employee">
-            <EntityTypeMapping TypeName="Shigapov326Model.Employee">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -641,7 +663,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Item">
-            <EntityTypeMapping TypeName="Shigapov326Model.Item">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.Item">
               <MappingFragment StoreEntitySet="Item">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -651,7 +673,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ItemEmployee">
-            <EntityTypeMapping TypeName="Shigapov326Model.ItemEmployee">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.ItemEmployee">
               <MappingFragment StoreEntitySet="ItemEmployee">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
@@ -660,7 +682,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ItemType">
-            <EntityTypeMapping TypeName="Shigapov326Model.ItemType">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.ItemType">
               <MappingFragment StoreEntitySet="ItemType">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -668,7 +690,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Performance">
-            <EntityTypeMapping TypeName="Shigapov326Model.Performance">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.Performance">
               <MappingFragment StoreEntitySet="Performance">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -679,7 +701,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Post">
-            <EntityTypeMapping TypeName="Shigapov326Model.Post">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.Post">
               <MappingFragment StoreEntitySet="Post">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -687,7 +709,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SchedulePerformance">
-            <EntityTypeMapping TypeName="Shigapov326Model.SchedulePerformance">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.SchedulePerformance">
               <MappingFragment StoreEntitySet="SchedulePerformance">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="PerformanceId" ColumnName="PerformanceId" />
@@ -697,8 +719,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TicketSale">
-            <EntityTypeMapping TypeName="Shigapov326Model.TicketSale">
+            <EntityTypeMapping TypeName="Shigapov326CircusModel.TicketSale">
               <MappingFragment StoreEntitySet="TicketSale">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="PerformanceId" ColumnName="PerformanceId" />

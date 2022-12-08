@@ -22,7 +22,7 @@
             <RowDefinition Height="14*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Style="{StaticResource Jost}" FontSize="22" Text="Добавить нового сотрудника" Grid.RowSpan="3"/>
+        <TextBlock Grid.Row="0" Style="{StaticResource Jost}" FontSize="22" Text="Сотрудник" Grid.RowSpan="3"/>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal">
             <UniformGrid HorizontalAlignment="Left" Width="545">
                 <StackPanel Margin="0 0 14 25" Orientation="Vertical">

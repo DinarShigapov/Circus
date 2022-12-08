@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Director.Model;
 
 namespace Director
 {
@@ -13,5 +14,7 @@ namespace Director
     /// </summary>
     public partial class App : Application
     {
+        public static Shigapov326CircusEntities DB = new Shigapov326CircusEntities();
+        public static Employee LoggedEmployee;
     }
 }

@@ -13,10 +13,10 @@ namespace Trainer.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Shigapov326Entities : DbContext
+    public partial class Shigapov326CircusEntities : DbContext
     {
-        public Shigapov326Entities()
-            : base("name=Shigapov326Entities")
+        public Shigapov326CircusEntities()
+            : base("name=Shigapov326CircusEntities")
         {
         }
     
@@ -35,6 +35,7 @@ namespace Trainer.Model
         public virtual DbSet<Performance> Performance { get; set; }
         public virtual DbSet<Post> Post { get; set; }
         public virtual DbSet<SchedulePerformance> SchedulePerformance { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TicketSale> TicketSale { get; set; }
     }
 }
