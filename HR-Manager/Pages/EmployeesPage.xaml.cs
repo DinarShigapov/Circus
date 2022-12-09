@@ -66,8 +66,9 @@ namespace HR_Manager.Pages
             }
             else
             {
-                LVEmployees.ItemsSource = App.DB.Employee.Where(a => a.LastName.ToString().Contains(TBSearch.Text.ToLower()) ||
-                a.Post.Name.ToString().Contains(TBSearch.Text.ToLower())).Where(x => x.Post.Id != 4).ToList();
+                LVEmployees.ItemsSource = 
+                    App.DB.Employee.Where(
+                        a => a.LastName.ToString().Contains(TBSearch.Text.ToLower()));
             }
 
         }
