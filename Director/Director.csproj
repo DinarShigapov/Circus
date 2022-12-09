@@ -183,18 +183,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Model\CircusDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CircusDB.Context.cs</LastGenOutput>
       <DependentUpon>CircusDB.edmx</DependentUpon>
+      <LastGenOutput>CircusDB.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\CircusDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CircusDB.edmx</DependentUpon>
       <LastGenOutput>CircusDB.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\user.png" />
     <Resource Include="Resources\logoCircus.png" />
     <Resource Include="Resources\AuthUser.png" />

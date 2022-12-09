@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Circus.Model
+namespace Clown.Model
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CircusDBEntities : DbContext
+    public partial class CircusEntities : DbContext
     {
-        public CircusDBEntities()
-            : base("name=CircusDBEntities")
+        public CircusEntities()
+            : base("name=CircusEntities")
         {
         }
     
@@ -28,7 +28,6 @@ namespace Circus.Model
         public virtual DbSet<Animal> Animal { get; set; }
         public virtual DbSet<AnimalType> AnimalType { get; set; }
         public virtual DbSet<Cage> Cage { get; set; }
-        public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Item> Item { get; set; }
         public virtual DbSet<ItemEmployee> ItemEmployee { get; set; }

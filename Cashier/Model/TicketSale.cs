@@ -16,7 +16,6 @@ namespace Cashier.Model
     {
         public int Id { get; set; }
         public int PerformanceId { get; set; }
-        public int ClientId { get; set; }
         public string LastNameClient { get; set; }
         public string FirstNameClient { get; set; }
         public string PatronymicClient { get; set; }

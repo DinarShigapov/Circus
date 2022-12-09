@@ -23,10 +23,12 @@ namespace Cashier.Pages
     public partial class TicketPage : Page
     {
         TicketSale contextTicket;
-        public TicketPage()
+        public TicketPage(TicketSale ticketSale)
         {
             InitializeComponent();
             CBPosts.ItemsSource = App.DB.Performance.ToList();
+            contextTicket = ticketSale;
+            DataContext = contextTicket;
         }
 
         List<TicketSale> ticketSales = new List<TicketSale>();
@@ -35,23 +37,23 @@ namespace Cashier.Pages
         {
 
             string errorMessage = "";
-            if (string.IsNullOrWhiteSpace(TLastName.Text) == true)
+            if (string.IsNullOrWhiteSpace(contextTicket.LastNameClient) == true)
             {
                 errorMessage += "Введите Фамилию\n";
             }
-            if (string.IsNullOrWhiteSpace(TFirstName.Text) == true)
+            if (string.IsNullOrWhiteSpace(contextTicket.FirstNameClient) == true)
             {
                 errorMessage += "Введите имя\n";
             }
-            if (string.IsNullOrWhiteSpace(TPatronymic.Text) == true)
+            if (string.IsNullOrWhiteSpace(contextTicket.PatronymicClient) == true)
             {
                 errorMessage += "Введите Отчество\n";
             }
-            if (string.IsNullOrWhiteSpace(TPhone.Text) == true)
+            if (string.IsNullOrWhiteSpace(contextTicket.PhoneClient) == true)
             {
                 errorMessage += "Введите Телефон\n";
             }
-            if (string.IsNullOrWhiteSpace(TAmountTicket.Text) == true)
+            if (contextTicket.TicketAmount == 0 || contextTicket.TicketAmount < 0 || contextTicket.TicketAmount == null)
             {
                 errorMessage += "Введите кол-во билетов\n";
             }
@@ -64,13 +66,9 @@ namespace Cashier.Pages
                 MessageBox.Show(errorMessage);
                 return;
             }
-            contextTicket.LastNameClient = TLastName.Text;
-            contextTicket.FirstNameClient = TFirstName.Text;
-            contextTicket.PatronymicClient = TPatronymic.Text;
-            contextTicket.PhoneClient = TPhone.Text;
-            contextTicket.Performance = CBPosts.SelectedItem as Performance;
-            contextTicket.TicketAmount = int.Parse(TAmountTicket.Text);
 
+            if (contextTicket.Id == 0)
+                App.DB.TicketSale.Add(contextTicket);
 
             App.DB.TicketSale.Add(contextTicket);
             App.DB.SaveChanges();

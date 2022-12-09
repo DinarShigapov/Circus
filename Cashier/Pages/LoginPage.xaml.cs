@@ -40,7 +40,7 @@ namespace Cashier.Pages
             }
             if (employee.PostId != 2)
             {
-                MessageBox.Show("Это приложение доступно только для HR-Manager'a");
+                MessageBox.Show("Это приложение доступно только для Cashier'a");
                 return;
             }
             App.LoggedEmployee = employee;

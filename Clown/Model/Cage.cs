@@ -7,27 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Circus.Model
+namespace Clown.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Client
+    public partial class Cage
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Client()
+        public Cage()
         {
-            this.TicketSale = new HashSet<TicketSale>();
+            this.Animal = new HashSet<Animal>();
         }
     
         public int Id { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public string Patronymic { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
+        public string Name { get; set; }
+        public decimal Square { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TicketSale> TicketSale { get; set; }
+        public virtual ICollection<Animal> Animal { get; set; }
     }
 }

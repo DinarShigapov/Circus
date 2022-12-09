@@ -13,10 +13,10 @@ namespace Director.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Shigapov326CircusEntities : DbContext
+    public partial class CircusEntities : DbContext
     {
-        public Shigapov326CircusEntities()
-            : base("name=Shigapov326CircusEntities")
+        public CircusEntities()
+            : base("name=CircusEntities")
         {
         }
     

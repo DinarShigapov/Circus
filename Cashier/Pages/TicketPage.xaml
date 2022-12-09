@@ -12,7 +12,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="33"/>
             <RowDefinition Height="232"/>
-            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Style="{StaticResource Jost}" FontSize="22" Text="Продажа билетов" />
@@ -20,20 +19,21 @@
             <UniformGrid Margin="0 " HorizontalAlignment="Left" VerticalAlignment="Center" Width="545">
                 <StackPanel Margin="0 0 14 25" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Фамилия"/>
-                    <TextBox x:Name="TLastName" FontSize="15" BorderThickness="0 0 0 2"/>
+                    <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding LastNameClient}"/>
                 </StackPanel>
                 <StackPanel  Margin="7 0 7 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Имя"/>
-                    <TextBox x:Name="TFirstName" FontSize="15" BorderThickness="0 0 0 2"/>
+                    <TextBox  FontSize="15" BorderThickness="0 0 0 2" Text="{Binding FirstNameClient}"/>
                 </StackPanel>
                 <StackPanel Margin="14 0 0 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Отчество"/>
-                    <TextBox x:Name="TPatronymic" FontSize="15" BorderThickness="0 0 0 2"/>
+                    <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding PatronymicClient}"/>
                 </StackPanel>
                 <StackPanel Margin="0 0 14 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}"  Text="Телефон"/>
-                    <TextBox x:Name="TPhone" BorderThickness="0 0 0 2"
-                             FontSize="15"/>
+                    <TextBox BorderThickness="0 0 0 2"
+                             FontSize="15"
+                             Text="{Binding PhoneClient}"/>
                 </StackPanel>
                 <StackPanel Margin="7 0 7 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Шоу"/>
@@ -48,11 +48,11 @@
                 </StackPanel>
                 <StackPanel Margin="14 0 0 0" Orientation="Vertical">
                     <TextBlock Style="{StaticResource JostO}" Text="Кол-во билетов"/>
-                    <TextBox x:Name="TAmountTicket" FontSize="15" BorderThickness="0 0 0 2"/>
+                    <TextBox FontSize="15" BorderThickness="0 0 0 2" Text="{Binding TicketAmount}"/>
                 </StackPanel>
             </UniformGrid>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Grid.Row="2" Margin="660,0,0,0" Width="100">
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal" Grid.Row="2" Margin="0 0 100 0" Width="100">
             <Button x:Name="BSave"
                     Style="{DynamicResource RoundButton}" 
                     BorderBrush="Transparent" 

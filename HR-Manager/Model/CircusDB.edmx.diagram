@@ -4,29 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6097b1a721aa4b7094832061d77b3eb1" Name="Diagram1" ZoomLevel="44">
-        <EntityTypeShape EntityType="Shigapov326CircusModel.Animal" Width="1.5" PointX="6.25" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.AnimalType" Width="1.5" PointX="9.875" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.Cage" Width="1.5" PointX="10.5" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.Employee" Width="1.5" PointX="12.25" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.Item" Width="1.5" PointX="14.625" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.ItemEmployee" Width="1.5" PointX="16.625" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.ItemType" Width="1.5" PointX="12.375" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.Performance" Width="1.5" PointX="7.375" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.Post" Width="1.5" PointX="15.625" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.SchedulePerformance" Width="1.5" PointX="9.625" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.sysdiagrams" Width="1.5" PointX="12.375" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shigapov326CircusModel.TicketSale" Width="1.5" PointX="9.625" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="Shigapov326CircusModel.FK_Animal_AnimalType" ManuallyRouted="false" />
-        <AssociationConnector Association="Shigapov326CircusModel.FK_Animal_Cage" ManuallyRouted="false" />
-        <AssociationConnector Association="Shigapov326CircusModel.FK_SchedulePerformance_Animal" ManuallyRouted="false" />
-        <AssociationConnector Association="Shigapov326CircusModel.FK_Employee_Post" ManuallyRouted="false" />
-        <AssociationConnector Association="Shigapov326CircusModel.FK_ItemEmployee_Employee" ManuallyRouted="false" />
-        <AssociationConnector Association="Shigapov326CircusModel.FK_SchedulePerformance_Employee" ManuallyRouted="false" />
-        <AssociationConnector Association="Shigapov326CircusModel.FK_ItemEmployee_Items" ManuallyRouted="false" />
-        <AssociationConnector Association="Shigapov326CircusModel.FK_Items_ItemType" ManuallyRouted="false" />
-        <AssociationConnector Association="Shigapov326CircusModel.FK_SchedulePerformance_Performance" ManuallyRouted="false" />
-        <AssociationConnector Association="Shigapov326CircusModel.FK_TicketSale_Performance" ManuallyRouted="false" />
+      <Diagram DiagramId="ae64953cf1514fefa3fa2689817306dc" Name="Diagram1">
+        <EntityTypeShape EntityType="Shigapov326Model.Animal" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.AnimalType" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.Cage" Width="1.5" PointX="1.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.Employee" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.Item" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.ItemEmployee" Width="1.5" PointX="10.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.ItemType" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.Performance" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.Post" Width="1.5" PointX="1.5" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.SchedulePerformance" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shigapov326Model.TicketSale" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="Shigapov326Model.FK_Animal_AnimalType" ManuallyRouted="false" />
+        <AssociationConnector Association="Shigapov326Model.FK_Animal_Cage" ManuallyRouted="false" />
+        <AssociationConnector Association="Shigapov326Model.FK_SchedulePerformance_Animal" ManuallyRouted="false" />
+        <AssociationConnector Association="Shigapov326Model.FK_Employee_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="Shigapov326Model.FK_ItemEmployee_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Shigapov326Model.FK_SchedulePerformance_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Shigapov326Model.FK_ItemEmployee_Items" ManuallyRouted="false" />
+        <AssociationConnector Association="Shigapov326Model.FK_Items_ItemType" ManuallyRouted="false" />
+        <AssociationConnector Association="Shigapov326Model.FK_SchedulePerformance_Performance" ManuallyRouted="false" />
+        <AssociationConnector Association="Shigapov326Model.FK_TicketSale_Performance" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

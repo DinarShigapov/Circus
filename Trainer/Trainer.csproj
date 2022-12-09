@@ -192,6 +192,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\user.png" />
+    <Resource Include="Resources\logoCircus.png" />
+    <Resource Include="Resources\AuthUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model\CircusDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CircusDB.edmx</DependentUpon>
@@ -202,14 +210,6 @@
       <DependentUpon>CircusDB.edmx</DependentUpon>
       <LastGenOutput>CircusDB.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\user.png" />
-    <Resource Include="Resources\logoCircus.png" />
-    <Resource Include="Resources\AuthUser.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

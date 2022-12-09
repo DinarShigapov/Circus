@@ -31,17 +31,6 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Square" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
-        <EntityType Name="Client">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Phone" Type="varchar" MaxLength="15" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="Id" />
@@ -126,6 +115,11 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PerformanceId" Type="int" Nullable="false" />
           <Property Name="ClientId" Type="int" Nullable="false" />
+          <Property Name="LastNameClient" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstNameClient" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PatronymicClient" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneClient" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="TicketAmount" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Animal_AnimalType">
           <End Role="AnimalType" Type="Self.AnimalType" Multiplicity="1" />
@@ -235,18 +229,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TicketSale_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="1" />
-          <End Role="TicketSale" Type="Self.TicketSale" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TicketSale">
-              <PropertyRef Name="ClientId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TicketSale_Performance">
           <End Role="Performance" Type="Self.Performance" Multiplicity="1" />
           <End Role="TicketSale" Type="Self.TicketSale" Multiplicity="*" />
@@ -263,7 +245,6 @@
           <EntitySet Name="Animal" EntityType="Self.Animal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnimalType" EntityType="Self.AnimalType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cage" EntityType="Self.Cage" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ItemEmployee" EntityType="Self.ItemEmployee" Schema="dbo" store:Type="Tables" />
@@ -309,10 +290,6 @@
             <End Role="Performance" EntitySet="Performance" />
             <End Role="SchedulePerformance" EntitySet="SchedulePerformance" />
           </AssociationSet>
-          <AssociationSet Name="FK_TicketSale_Client" Association="Self.FK_TicketSale_Client">
-            <End Role="Client" EntitySet="Client" />
-            <End Role="TicketSale" EntitySet="TicketSale" />
-          </AssociationSet>
           <AssociationSet Name="FK_TicketSale_Performance" Association="Self.FK_TicketSale_Performance">
             <End Role="Performance" EntitySet="Performance" />
             <End Role="TicketSale" EntitySet="TicketSale" />
@@ -353,18 +330,6 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Square" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <NavigationProperty Name="Animal" Relationship="Self.FK_Animal_Cage" FromRole="Cage" ToRole="Animal" />
-        </EntityType>
-        <EntityType Name="Client">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="TicketSale" Relationship="Self.FK_TicketSale_Client" FromRole="Client" ToRole="TicketSale" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -464,7 +429,11 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PerformanceId" Type="Int32" Nullable="false" />
           <Property Name="ClientId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Client" Relationship="Self.FK_TicketSale_Client" FromRole="TicketSale" ToRole="Client" />
+          <Property Name="LastNameClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstNameClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PatronymicClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneClient" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TicketAmount" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Performance" Relationship="Self.FK_TicketSale_Performance" FromRole="TicketSale" ToRole="Performance" />
         </EntityType>
         <Association Name="FK_Animal_AnimalType">
@@ -500,18 +469,6 @@
             </Principal>
             <Dependent Role="SchedulePerformance">
               <PropertyRef Name="AnimalId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TicketSale_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="1" />
-          <End Role="TicketSale" Type="Self.TicketSale" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TicketSale">
-              <PropertyRef Name="ClientId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -599,11 +556,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CircusDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CircusEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Animal" EntityType="Self.Animal" />
           <EntitySet Name="AnimalType" EntityType="Self.AnimalType" />
           <EntitySet Name="Cage" EntityType="Self.Cage" />
-          <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="Employee" EntityType="Self.Employee" />
           <EntitySet Name="Item" EntityType="Self.Item" />
           <EntitySet Name="ItemEmployee" EntityType="Self.ItemEmployee" />
@@ -624,10 +580,6 @@
           <AssociationSet Name="FK_SchedulePerformance_Animal" Association="Self.FK_SchedulePerformance_Animal">
             <End Role="Animal" EntitySet="Animal" />
             <End Role="SchedulePerformance" EntitySet="SchedulePerformance" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TicketSale_Client" Association="Self.FK_TicketSale_Client">
-            <End Role="Client" EntitySet="Client" />
-            <End Role="TicketSale" EntitySet="TicketSale" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_Post" Association="Self.FK_Employee_Post">
             <End Role="Post" EntitySet="Post" />
@@ -663,7 +615,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Shigapov326ModelContainer" CdmEntityContainer="CircusDBEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Shigapov326ModelContainer" CdmEntityContainer="CircusEntities">
           <EntitySetMapping Name="Animal">
             <EntityTypeMapping TypeName="Shigapov326Model.Animal">
               <MappingFragment StoreEntitySet="Animal">
@@ -690,18 +642,6 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Square" ColumnName="Square" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Client">
-            <EntityTypeMapping TypeName="Shigapov326Model.Client">
-              <MappingFragment StoreEntitySet="Client">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -796,6 +736,11 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="PerformanceId" ColumnName="PerformanceId" />
                 <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="LastNameClient" ColumnName="LastNameClient" />
+                <ScalarProperty Name="FirstNameClient" ColumnName="FirstNameClient" />
+                <ScalarProperty Name="PatronymicClient" ColumnName="PatronymicClient" />
+                <ScalarProperty Name="PhoneClient" ColumnName="PhoneClient" />
+                <ScalarProperty Name="TicketAmount" ColumnName="TicketAmount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

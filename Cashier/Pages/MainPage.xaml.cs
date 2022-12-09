@@ -27,7 +27,7 @@ namespace Cashier.Pages
             var user = App.LoggedEmployee;
             TFullName.Text = $"{user.LastName} {user.FirstName.ToCharArray()[0]}. {user.Patronymic.ToCharArray()[0]}.";
             TPost.Text = user.Post.Name;
-            MenuFrame.Navigate(new TicketPage());
+            MenuFrame.Navigate(new TicketSellingPage());
         }
     }
 }
