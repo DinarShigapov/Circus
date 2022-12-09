@@ -8,7 +8,7 @@ namespace Clown
     /// </summary>
     public partial class App : Application
     {
-        public static CircusEntities DB = new CircusEntities();
+        public static Shigapov326CircusEntities DB = new Shigapov326CircusEntities();
         public static Employee LoggedEmployee;
     }
 }

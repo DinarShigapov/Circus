@@ -87,13 +87,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Animal.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\AnimalType.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Cage.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CircusDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CircusDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CircusDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CircusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CircusDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\CircusEntities.Context.cs">
       <AutoGen>True</AutoGen>
@@ -111,31 +126,31 @@
       <DependentUpon>CircusEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Employee.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Item.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ItemEmployee.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ItemType.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Performance.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Post.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SchedulePerformance.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagrams.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TicketSale.cs">
-      <DependentUpon>CircusEntities.tt</DependentUpon>
+      <DependentUpon>CircusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -164,6 +179,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CircusEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Model\CircusDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CircusDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\CircusDB.edmx.diagram">
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+    </None>
     <None Include="Model\CircusEntities.edmx.diagram">
       <DependentUpon>CircusEntities.edmx</DependentUpon>
     </None>
@@ -177,6 +199,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model\CircusDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+      <LastGenOutput>CircusDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\CircusDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CircusDB.edmx</DependentUpon>
+      <LastGenOutput>CircusDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Model\CircusEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CircusEntities.Context.cs</LastGenOutput>
